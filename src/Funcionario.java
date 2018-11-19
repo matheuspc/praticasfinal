@@ -1,28 +1,78 @@
 import java.util.Scanner;
 
-public class Funcionario {
+public class Funcionario extends Pessoa{
 	
-	String nomeFunc;
 	String enderecoFunc;
 	String telefoneFunc;
-	String cpfFunc;
 	String ctpsFunc;
 	double salarioFunc;
 	
+	public String getEnderecoFunc() {
+		return enderecoFunc;
+	}
+
+	public boolean setEnderecoFunc(String enderecoFunc) {
+		if (enderecoFunc.length()>0) {
+			this.enderecoFunc = enderecoFunc;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public String getTelefoneFunc() {
+		return telefoneFunc;
+	}
+
+	public boolean setTelefoneFunc(String telefoneFunc) {
+		if(telefoneFunc.length()>0) {
+			this.telefoneFunc = telefoneFunc;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public String getCtpsFunc() {
+		return ctpsFunc;
+	}
+
+	public boolean setCtpsFunc(String ctpsFunc) {
+		if(ctpsFunc.length()>0) {
+			this.ctpsFunc = ctpsFunc;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public double getSalarioFunc() {
+		return salarioFunc;
+	}
+
+	public boolean setSalarioFunc(double salarioFunc) {
+		if(salarioFunc>0) {
+			this.salarioFunc = salarioFunc;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 	public void lerDados() {
 		Scanner s = new Scanner(System.in);
 		
-		System.out.println("Digite o nome do funcionário: ");
-		this.nomeFunc = s.nextLine();
+		super.lerDados();
 		
 		System.out.println("Digite o endereço do funcionário: ");
 		this.enderecoFunc = s.nextLine();
 		
 		System.out.println("Digite o telefone do funcionário: ");
 		this.telefoneFunc = s.nextLine();
-		
-		System.out.println("Digite o CPF do funcionário: ");
-		this.cpfFunc = s.next();
 		
 		s.nextLine();
 		System.out.println("Digite o CTPS do funcionário: ");
@@ -34,10 +84,9 @@ public class Funcionario {
 	
 	public void mostrarDados() {
 		
-		System.out.println("Nome: " + this.nomeFunc);
+		super.mostrarDados();
 		System.out.println("Endereço: " + this.enderecoFunc);
 		System.out.println("Telefone: " + this.telefoneFunc);
-		System.out.println("CPF: " + this.cpfFunc);
 		System.out.println("CTPS: " + this.ctpsFunc);
 		System.out.println("Salário: " + this.salarioFunc);
 		

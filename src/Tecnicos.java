@@ -2,6 +2,34 @@ import java.util.Scanner;
 
 public class Tecnicos extends Funcionario {
 	
+	public String getCargo() {
+		return cargo;
+	}
+
+	public boolean setCargo(String cargo) {
+		if(cargo.length()>0) {
+			this.cargo = cargo;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public String getDepartamento() {
+		return departamento;
+	}
+
+	public boolean setDepartamento(String departamento) {
+		if(departamento.length()>0) {
+			this.departamento = departamento;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 	String cargo;
 	String departamento;
 	

@@ -6,6 +6,48 @@ public class Curso {
 	String nomeCurso;
 	int duracaoCurso;
 	
+	public int getCodigoCurso() {
+		return codigoCurso;
+	}
+
+	public boolean setCodigoCurso(int codigoCurso) {
+		if(codigoCurso>0) {
+			this.codigoCurso = codigoCurso;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public String getNomeCurso() {
+		return nomeCurso;
+	}
+
+	public boolean setNomeCurso(String nomeCurso) {
+		if(nomeCurso.length()>0) {
+			this.nomeCurso = nomeCurso;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public int getDuracaoCurso() {
+		return duracaoCurso;
+	}
+
+	public boolean setDuracaoCurso(int duracaoCurso) {
+		if(duracaoCurso>0) {
+			this.duracaoCurso = duracaoCurso;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	public void lerDados() {
 		
 		Scanner s = new Scanner(System.in);
