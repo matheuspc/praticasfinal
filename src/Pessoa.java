@@ -43,13 +43,13 @@ public class Pessoa {
 		this.nomePessoa = s.nextLine();
 		
 		System.out.println("Digite o CPF: ");
-		this.cpfPessoa = s.nextLine();
+		while (!setCpf(s.nextLine()));
 	}
 	
 	public void mostrarDados() {
 		
 		System.out.println("Nome: " + this.nomePessoa);
-		System.out.println("Matrícula: " + this.cpfPessoa);
+		System.out.println("CPF: " + this.cpfPessoa);
 	}
 
 }
