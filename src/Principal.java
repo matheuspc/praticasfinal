@@ -4,7 +4,7 @@ public class Principal {
 	public static void main(String[] args) {
 
 
-		Professor a = new Professor();
+		Aluno a = new Aluno();
 		a.lerDados();
 		a.mostrarDados();
 
