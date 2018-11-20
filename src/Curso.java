@@ -1,17 +1,33 @@
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
 
-public class Curso {
+public abstract class Curso {
 	
-	int codigoCurso;
+	String codigoCurso;
 	String nomeCurso;
 	int duracaoCurso;
+	private ArrayList <Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
-	public int getCodigoCurso() {
+	public void adicionarDisciplinas(Disciplina d) {
+		disciplinas.add(d);
+	}
+	
+	public void mostrarDisciplinas() {
+		for(Disciplina d: disciplinas) {
+			d.mostrarDados();
+		}
+	}
+	
+	public void removerDisciplinas(Disciplina d) {
+		disciplinas.remove(d);
+	}
+	
+	public String getCodigoCurso() {
 		return codigoCurso;
 	}
 
-	public boolean setCodigoCurso(int codigoCurso) {
-		if(codigoCurso>0) {
+	public boolean setCodigoCurso(String codigoCurso) {
+		if(codigoCurso.length()>0) {
 			this.codigoCurso = codigoCurso;
 			return true;
 		}

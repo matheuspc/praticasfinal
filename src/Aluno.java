@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
-public class Aluno extends Pessoa {
+public abstract class Aluno extends Pessoa {
 	
 	String matriculaAluno;
 	String situacao;
 	byte situacaoMatricula;
-	Curso curso;
 	
 	public String getSituacao() {
 		return situacao;
@@ -57,9 +56,7 @@ public class Aluno extends Pessoa {
 		
 		System.out.println("Digite a situação do curso: ");
 		while(!setSituacao(s.nextLine()));
-				
-		this.curso = new Curso();
-		this.curso.lerDados();		
+					
 	}
 	
 	public void mostrarDados() {
@@ -75,7 +72,7 @@ public class Aluno extends Pessoa {
 		else if(this.situacaoMatricula == 3) {
 			System.out.println("Desligado");
 		}
-		this.curso.mostrarDados();
+		//this.curso.mostrarDados();
 
 	}
 

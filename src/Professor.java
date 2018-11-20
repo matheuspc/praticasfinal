@@ -4,6 +4,8 @@ public class Professor extends Funcionario {
 	
 	String titulacao;
 	String areaPesquisa;
+	int numeroHorasAula;
+	double valorHoraAula;
 	
 	public String getTitulacao() {
 		return titulacao;
@@ -55,4 +57,7 @@ public class Professor extends Funcionario {
 		
 	}
 
+	public double calcSalario() {
+		return numeroHorasAula * valorHoraAula;
+	}
 }

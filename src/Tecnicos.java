@@ -4,6 +4,8 @@ public class Tecnicos extends Funcionario {
 	
 	String cargo;
 	String departamento;
+	double qtdHoraExtra;
+	double valorHoraExtra;
 	
 	public String getCargo() {
 		return cargo;
@@ -53,5 +55,13 @@ public class Tecnicos extends Funcionario {
 		System.out.println("Cargo: " + this.cargo);
 		System.out.println("Departamento: " + this.departamento);
 		
+	}
+	
+	public double calcSalario() {
+		return super.salarioFunc + (this.valorHoraExtra * this.qtdHoraExtra);  
+	}
+	
+	public double calcSalario(double qtdHoraExtra, double valorHoraExtra) {
+		return super.salarioFunc + (qtdHoraExtra * valorHoraExtra);
 	}
 }

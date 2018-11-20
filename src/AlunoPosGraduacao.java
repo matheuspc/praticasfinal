@@ -5,7 +5,11 @@ public class AlunoPosGraduacao extends Aluno {
 	String graduacao;
 	String anoInicio;
 	String anoConclusao;
-	Curso curso;
+	CursoPosGraduacao cpg;
+	
+	AlunoPosGraduacao(){
+		
+	}
 
 	public String getGraduacao() {
 		return graduacao;
@@ -66,8 +70,8 @@ public class AlunoPosGraduacao extends Aluno {
 		System.out.println("Digite o ano de conclusão da graduação: ");
 		while(!setAnoConclusao(s.nextLine()));
 		
-		this.curso = new Curso();
-		this.curso.lerDados();
+		this.cpg = new CursoPosGraduacao();
+		this.cpg.lerDados();
 	}
 	
 	public void mostrarDados() {
@@ -77,6 +81,6 @@ public class AlunoPosGraduacao extends Aluno {
 		System.out.println("Graduação: " + this.graduacao);
 		System.out.println("Ano de início: " + this.anoInicio);
 		System.out.println("Ano de conclusão: " + this.anoConclusao);
-		this.curso.mostrarDados();
+		this.cpg.mostrarDados();
 	}
 }

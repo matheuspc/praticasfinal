@@ -2,18 +2,22 @@ import java.util.Scanner;
 
 public class Disciplina {
 	
-	int codigoDisciplina;
+	String codigoDisciplina;
 	String nomeDisciplina;
 	int cargaHoraria;
-	Curso curso;
+	//Curso curso;
 	Professor professor;
 	
-	public int getCodigoDisciplina() {
+	Disciplina (Curso curso){
+		
+	}
+	
+	public String getCodigoDisciplina() {
 		return codigoDisciplina;
 	}
 
-	public boolean setCodigoDisciplina(int codigoDisciplina) {
-		if(codigoDisciplina>0) {
+	public boolean setCodigoDisciplina(String codigoDisciplina) {
+		if(codigoDisciplina.length()>0) {
 			this.codigoDisciplina = codigoDisciplina;
 			return true;
 		}
@@ -65,8 +69,8 @@ public class Disciplina {
 		System.out.println("Digite a carga horária da disciplina: ");
 		while(!setCargaHoraria(s.nextInt()));
 		
-		this.curso = new Curso();
-		this.curso.lerDados();
+		//this.curso = new Curso();
+		//this.curso.lerDados();
 		this.professor = new Professor();
 		this.professor.lerDados();
 				
@@ -77,8 +81,8 @@ public class Disciplina {
 		System.out.println("Código da disciplina: " + this.codigoDisciplina);
 		System.out.println("Nome da disciplina: " + this.nomeDisciplina);
 		System.out.println("Carga horária da disciplina: " + this.cargaHoraria);
-		this.curso.mostrarDados();
+		//curso.mostrarDados();
 		this.professor.mostrarDados();
 	}
-
+	
 }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Funcionario extends Pessoa{
+public abstract class Funcionario extends Pessoa{
 	
 	String enderecoFunc;
 	String telefoneFunc;
@@ -95,4 +95,6 @@ public class Funcionario extends Pessoa{
 		System.out.println("Salário: " + this.salarioFunc);
 		
 	}
+	
+	public abstract double calcSalario();
 }
