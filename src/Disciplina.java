@@ -18,6 +18,7 @@ public class Disciplina {
 			return true;
 		}
 		else {
+			System.out.println("Código da disciplina inválida!");
 			return false;
 		}
 	}
@@ -32,6 +33,7 @@ public class Disciplina {
 			return true;
 		}
 		else {
+			System.out.println("Nome da disciplina inválida!");
 			return false;
 		}
 	}
@@ -46,6 +48,7 @@ public class Disciplina {
 			return true;
 		}
 		else {
+			System.out.println("Carga horária inválida!");
 			return false;
 		}
 	}
@@ -54,13 +57,13 @@ public class Disciplina {
 		Scanner s = new Scanner(System.in);
 		
 		System.out.println("Digite o código da disciplina: ");
-		this.codigoDisciplina = s.nextInt();
+		while(!setCodigoDisciplina(s.nextInt()));
 		
 		System.out.println("Digite o nome da disciplina: ");
-		this.nomeDisciplina = s.nextLine();
+		while(!setNomeDisciplina(s.nextLine()));
 		
 		System.out.println("Digite a carga horária da disciplina: ");
-		this.cargaHoraria = s.nextInt();
+		while(!setCargaHoraria(s.nextInt()));
 		
 		this.curso = new Curso();
 		this.curso.lerDados();

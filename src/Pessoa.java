@@ -15,6 +15,7 @@ public class Pessoa {
 			return true;
 		}
 		else {
+			System.out.println("Nome inválido!");
 			return false;
 		}
 	}
@@ -40,7 +41,7 @@ public class Pessoa {
 		Scanner s = new Scanner(System.in);
 		
 		System.out.println("Digite o nome: ");
-		this.nomePessoa = s.nextLine();
+		while(!setNomePessoa(s.nextLine()));
 		
 		System.out.println("Digite o CPF: ");
 		while (!setCpf(s.nextLine()));

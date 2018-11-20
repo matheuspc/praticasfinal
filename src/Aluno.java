@@ -2,25 +2,36 @@ import java.util.Scanner;
 
 public class Aluno extends Pessoa {
 	
-	String nomeAluno;
 	String matriculaAluno;
-	String cpfAluno;
+	String situacao;
+	byte situacaoMatricula;
 	Curso curso;
 	
-	public String getNomeAluno() {
-		return nomeAluno;
+	public String getSituacao() {
+		return situacao;
 	}
 
-	public boolean setNomeAluno(String nomeAluno) {
-		if(nomeAluno.length()>0) {
-			this.nomeAluno = nomeAluno;
+	public boolean setSituacao(String situacao) {
+		if(situacao.equals("m") || situacao.equals("t") || situacao.equals("d")) {
+			if(situacao.equals("m")) {
+				this.situacaoMatricula = 1;
+			}
+			else if(situacao.equals("t")){
+				this.situacaoMatricula = 2; 
+			}
+			else if(situacao.equals("d")) {
+				this.situacaoMatricula = 3;
+			}
+			this.situacao = situacao;
 			return true;
 		}
 		else {
+			System.out.println("Situação inválida!");
 			return false;
 		}
-	}
-
+		
+	}	
+	
 	public String getMatriculaAluno() {
 		return matriculaAluno;
 	}
@@ -31,20 +42,7 @@ public class Aluno extends Pessoa {
 			return true;
 		}
 		else {
-			return false;
-		}
-	}
-
-	public String getCpfAluno() {
-		return cpfAluno;
-	}
-
-	public boolean setCpfAluno(String cpfAluno) {
-		if(cpfAluno.length()>0) {
-			this.cpfAluno = cpfAluno;
-			return true;
-		}
-		else {
+			System.out.println("Matrícula inválida!");
 			return false;
 		}
 	}
@@ -55,8 +53,11 @@ public class Aluno extends Pessoa {
 		super.lerDados();
 		
 		System.out.println("Digite a matrícula do aluno: ");
-		this.matriculaAluno = s.nextLine();
+		while(!setMatriculaAluno(s.nextLine()));
 		
+		System.out.println("Digite a situação do curso: ");
+		while(!setSituacao(s.nextLine()));
+				
 		this.curso = new Curso();
 		this.curso.lerDados();		
 	}
@@ -65,6 +66,15 @@ public class Aluno extends Pessoa {
 		
 		super.mostrarDados();
 		System.out.println("Matrícula: " + this.matriculaAluno);
+		if(this.situacaoMatricula == 1) {
+			System.out.println("Matriculado");
+		}
+		else if(this.situacaoMatricula == 2) {
+			System.out.println("Trancado");
+		}
+		else if(this.situacaoMatricula == 3) {
+			System.out.println("Desligado");
+		}
 		this.curso.mostrarDados();
 
 	}

@@ -17,6 +17,7 @@ public class AlunoPosGraduacao extends Aluno {
 			return true;
 		}
 		else {
+			System.out.println("Graduação inválida!");
 			return false;
 		}
 	}
@@ -31,6 +32,7 @@ public class AlunoPosGraduacao extends Aluno {
 			return true;
 		}
 		else {
+			System.out.println("Ano de início inválido!");
 			return false;
 		}
 	}
@@ -45,6 +47,7 @@ public class AlunoPosGraduacao extends Aluno {
 			return true;
 		}
 		else {
+			System.out.println("Ano de conclusão inválido!");
 			return false;
 		}
 	}
@@ -55,13 +58,13 @@ public class AlunoPosGraduacao extends Aluno {
 		super.lerDados();
 		
 		System.out.println("Digite a graduação do aluno:");
-		this.graduacao = s.nextLine();
+		while(!setGraduacao(s.nextLine()));
 		
 		System.out.println("Digite o ano de início da graduação: ");
-		this.anoInicio = s.nextLine();
+		while(!setAnoInicio(s.nextLine()));
 		
 		System.out.println("Digite o ano de conclusão da graduação: ");
-		this.anoConclusao = s.nextLine();
+		while(!setAnoConclusao(s.nextLine()));
 		
 		this.curso = new Curso();
 		this.curso.lerDados();

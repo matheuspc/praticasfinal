@@ -17,6 +17,7 @@ public class Funcionario extends Pessoa{
 			return true;
 		}
 		else {
+			System.out.println("Endereço inválido!");
 			return false;
 		}
 	}
@@ -31,6 +32,7 @@ public class Funcionario extends Pessoa{
 			return true;
 		}
 		else {
+			System.out.println("Telefone inválido!");
 			return false;
 		}
 	}
@@ -45,6 +47,7 @@ public class Funcionario extends Pessoa{
 			return true;
 		}
 		else {
+			System.out.println("CTPS inválido!");
 			return false;
 		}
 	}
@@ -59,6 +62,7 @@ public class Funcionario extends Pessoa{
 			return true;
 		}
 		else {
+			System.out.println("Salário inválido!");
 			return false;
 		}
 	}
@@ -69,17 +73,17 @@ public class Funcionario extends Pessoa{
 		super.lerDados();
 		
 		System.out.println("Digite o endereço do funcionário: ");
-		this.enderecoFunc = s.nextLine();
+		while(!setEnderecoFunc(s.nextLine()));
 		
 		System.out.println("Digite o telefone do funcionário: ");
-		this.telefoneFunc = s.nextLine();
+		while(!setTelefoneFunc(s.nextLine()));
 		
 		s.nextLine();
 		System.out.println("Digite o CTPS do funcionário: ");
-		this.ctpsFunc = s.nextLine();
+		while(!setCtpsFunc(s.nextLine()));
 				
 		System.out.println("Digite o salário do funcionário: ");
-		this.salarioFunc = s.nextDouble();
+		while(!setSalarioFunc(s.nextDouble()));
 	}
 	
 	public void mostrarDados() {

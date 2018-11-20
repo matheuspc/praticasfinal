@@ -15,6 +15,7 @@ public class Professor extends Funcionario {
 			return true;
 		}
 		else {
+			System.out.println("Titulação inválida!");
 			return false;
 		}
 	}
@@ -29,6 +30,7 @@ public class Professor extends Funcionario {
 			return true;
 		}
 		else {
+			System.out.println("Área de pesquisa inválida!");
 			return false;
 		}
 	}
@@ -39,10 +41,10 @@ public class Professor extends Funcionario {
 		super.lerDados();
 		
 		System.out.println("Digite a titulação do professor:  ");
-		this.titulacao = s.nextLine();
+		while(!setTitulacao(s.nextLine()));
 		
 		System.out.println("Digite a área de pesquisa do professor: ");
-		this.areaPesquisa = s.nextLine();		
+		while(!setAreaPesquisa(s.nextLine()));	
 	}
 	
 	public void mostrarDados() {		

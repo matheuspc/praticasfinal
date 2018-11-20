@@ -16,6 +16,7 @@ public class Curso {
 			return true;
 		}
 		else {
+			System.out.println("Código do curso inválido!");
 			return false;
 		}
 	}
@@ -30,6 +31,7 @@ public class Curso {
 			return true;
 		}
 		else {
+			System.out.println("Nome do curso inválido!");
 			return false;
 		}
 	}
@@ -44,6 +46,7 @@ public class Curso {
 			return true;
 		}
 		else {
+			System.out.println("Duração do curso inválida!");
 			return false;
 		}
 	}
@@ -53,13 +56,13 @@ public class Curso {
 		Scanner s = new Scanner(System.in);
 		
 		System.out.println("Digite o nome do curso: ");
-		this.nomeCurso = s.nextLine();
+		while(!setNomeCurso(s.nextLine()));
 		
 		System.out.println("Digite o código do curso: ");
-		this.codigoCurso = s.nextInt();
+		while(!setCodigoCurso(s.nextInt()));
 		
 		System.out.println("Digite a duração do curso: ");
-		this.duracaoCurso = s.nextInt();
+		while(!setDuracaoCurso(s.nextInt()));
 	}
 	
 	public void mostrarDados() {
