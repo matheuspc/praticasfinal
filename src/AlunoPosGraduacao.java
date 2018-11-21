@@ -7,6 +7,9 @@ public class AlunoPosGraduacao extends Aluno {
 	String anoConclusao;
 	CursoPosGraduacao cpg;
 	
+	AlunoPosGraduacao(CursoPosGraduacao cpg){
+		
+	}
 	AlunoPosGraduacao(){
 		
 	}
@@ -82,5 +85,15 @@ public class AlunoPosGraduacao extends Aluno {
 		System.out.println("Ano de início: " + this.anoInicio);
 		System.out.println("Ano de conclusão: " + this.anoConclusao);
 		this.cpg.mostrarDados();
+	}
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getTipo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

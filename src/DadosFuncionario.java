@@ -1,40 +1,35 @@
 import java.util.*;
 
-public class DadosFuncionario {
+public abstract class DadosFuncionario {
 
-	private ArrayList <Funcionario> funcionarios = new ArrayList <Funcionario>();
+	private static ArrayList <Funcionario> funcionarios = new ArrayList <Funcionario>();
 	
-	public void cadastrar (Funcionario f) {
-		this.funcionarios.add(f);
-		System.out.println("Total de Funcionários inseridos...: ");
-		System.out.println(this.funcionarios.size());
+	public static void cadastrar (Funcionario f) {
+		funcionarios.add(f);
 	}
 	
-	public void listar() {
-		for (Funcionario objeto: funcionarios) {
-			objeto.mostrarDados();
+	public static void listar () {
+		for(Funcionario f: funcionarios) {
+			f.mostrarDados();
 		}
 	}
 	
-	public Funcionario buscar (String cpf) {
-		Funcionario f = null;
-		for(Funcionario objeto: funcionarios) {
-			if(objeto.getCpfPessoa().equals(cpf)) {
-				f = objeto;
-				break;
+	public static Funcionario buscar(String cpf) {
+		for(Funcionario f: funcionarios) {
+			if(f.getCpfPessoa().equals(cpf)) {
+				return f;
 			}
 		}
-		return f;
+		return null;
 	}
 	
-	public boolean excluir (String cpf) {
-		Funcionario f = this.buscar(cpf);
-		if(f!=null) {
-			this.funcionarios.remove(cpf);
-			return true;
+	public static boolean excluir(String cpf) {
+		for(Funcionario f: funcionarios) {
+			if(f.getCpfPessoa().equals(cpf)) {
+				funcionarios.remove(cpf);
+				return true;
+			}
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 }

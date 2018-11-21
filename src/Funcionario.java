@@ -2,10 +2,11 @@ import java.util.Scanner;
 
 public abstract class Funcionario extends Pessoa{
 	
-	String enderecoFunc;
-	String telefoneFunc;
-	String ctpsFunc;
-	double salarioFunc;
+	private String enderecoFunc;
+	private String telefoneFunc;
+	private String ctpsFunc;
+	private double salarioFunc;
+	private static double pisoSalarial;
 	
 	public String getEnderecoFunc() {
 		return enderecoFunc;
@@ -97,4 +98,12 @@ public abstract class Funcionario extends Pessoa{
 	}
 	
 	public abstract double calcSalario();
+
+	public static double getPisoSalarial() {
+		return pisoSalarial;
+	}
+
+	public static void setPisoSalarial(double pisoSalarial) {
+		Funcionario.pisoSalarial = pisoSalarial;
+	}
 }

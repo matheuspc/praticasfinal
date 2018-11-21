@@ -2,11 +2,19 @@ import java.util.Scanner;
 
 public class Tecnicos extends Funcionario {
 	
-	String cargo;
-	String departamento;
-	double qtdHoraExtra;
-	double valorHoraExtra;
+	private String cargo;
+	private String departamento;
+	private double qtdHoraExtra;
+	private static double valorHoraExtra;
 	
+	public static double getValorHoraExtra() {
+		return valorHoraExtra;
+	}
+
+	public static void setValorHoraExtra(double valorHoraExtra) {
+		Tecnicos.valorHoraExtra = valorHoraExtra;
+	}
+
 	public String getCargo() {
 		return cargo;
 	}
@@ -58,10 +66,22 @@ public class Tecnicos extends Funcionario {
 	}
 	
 	public double calcSalario() {
-		return super.salarioFunc + (this.valorHoraExtra * this.qtdHoraExtra);  
+		return super.getSalarioFunc() + (this.valorHoraExtra * this.qtdHoraExtra);  
 	}
 	
 	public double calcSalario(double qtdHoraExtra, double valorHoraExtra) {
-		return super.salarioFunc + (qtdHoraExtra * valorHoraExtra);
+		return super.getSalarioFunc() + (qtdHoraExtra * valorHoraExtra);
+	}
+
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getTipo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

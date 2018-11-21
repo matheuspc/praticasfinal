@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements Pesquisador {
 	
-	String nomePessoa;
-	String cpfPessoa;
+	private String nomePessoa;
+	private String cpfPessoa;
 	
 	public String getNomePessoa() {
 		return nomePessoa;

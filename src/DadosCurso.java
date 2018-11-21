@@ -1,41 +1,37 @@
 import java.util.*;
 
-public class DadosCurso {
+public abstract class DadosCurso {
 
-		private ArrayList <Curso> cursos = new ArrayList <Curso>();
+		private static ArrayList <Curso> cursos = new ArrayList <Curso>();
 		
-		public void cadastrar (Curso c) {
-			this.cursos.add(c);
-			System.out.println("Total de cursos inseridos...: ");
-			System.out.println(this.cursos.size());
+		public static void cadastrar (Curso c) {
+			cursos.add(c);
 		}
 		
-		public void listar() {
-			for (Curso objeto: cursos) {
-				objeto.mostrarDados();
+		public static void listar() {
+			for (Curso c: cursos) {
+				c.mostrarDados();
 			}
 		}
 		
-		public Curso buscar (String codigo) {
-			Curso c = this.buscar(codigo);
-			for(Curso objeto: this.cursos) {
-				if(objeto.getCodigoCurso().equals(codigo)) {
-					c = objeto;
-					break;
+		public static Curso buscar (String codigo) {
+			for(Curso c: cursos) {
+				if(c.getCodigoCurso().equals(codigo)) {
+					return c;
+				}			
+			}
+			return null;
+		}
+		
+		public static boolean excluir(String codigo) {
+			for (Curso c: cursos) {
+				if(c.getCodigoCurso().equals(codigo)) {
+					cursos.remove(codigo);
+					return true;
 				}
+							
 			}
-			return c;
-		}
-		
-		public boolean excluir (String codigo) {
-			Curso c = this.buscar(codigo);
-			if(c!=null) {
-				this.cursos.remove(codigo);
-				return true;
-			}
-			else {
-				return false;
-			}
+			return false;	
 		}
 	
 

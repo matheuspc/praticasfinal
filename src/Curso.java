@@ -3,9 +3,9 @@ import java.util.*;
 
 public abstract class Curso {
 	
-	String codigoCurso;
-	String nomeCurso;
-	int duracaoCurso;
+	private String codigoCurso;
+	private String nomeCurso;
+	private int duracaoCurso;
 	private ArrayList <Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	public void adicionarDisciplinas(Disciplina d) {

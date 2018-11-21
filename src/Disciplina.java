@@ -2,13 +2,17 @@ import java.util.Scanner;
 
 public class Disciplina {
 	
-	String codigoDisciplina;
-	String nomeDisciplina;
-	int cargaHoraria;
+	private String codigoDisciplina;
+	private String nomeDisciplina;
+	private int cargaHoraria;
 	//Curso curso;
 	Professor professor;
 	
 	Disciplina (Curso curso){
+		
+	}
+	
+	Disciplina (){
 		
 	}
 	

@@ -1,26 +1,49 @@
+import java.util.*;
 
 public class Principal {
 
 	public static void main(String[] args) {
-
-		DadosAlunos alunos = new DadosAlunos();
-		DadosCurso cursos = new DadosCurso();
-		DadosDisciplina disciplinas = new DadosDisciplina();
-		DadosFuncionario funcionarios = new DadosFuncionario();
-		DadosProfessores professores = new DadosProfessores();
-		DadosTecnicos tecnicos = new DadosTecnicos();
+/*		Tecnicos teste;
 		
-		AlunoGraduacao a = new AlunoGraduacao();
-		a.lerDados();
-		alunos.cadastrar(a);
-		alunos.listar();
+		FolhaPagamento folha = new FolhaPagamento();
 		
-		CursoGraduacao c = new CursoGraduacao();
-		c.lerDados();
-		cursos.cadastrar(c);
-
-		a.setCurso(c);
+		ArrayList <Tecnicos> tec = new ArrayList <Tecnicos>();
+		
+		for (int i=0;i<2;i++) {
+			teste = new Tecnicos();
+			teste.lerDados();
+			tec.add(teste);			
+		}
+		
+		folha.somaFolha(tec);
+		System.out.println(folha.getTotalFolha());
+		
+		folha.relatorioFolha(tec);*/
+		
+		Pesquisador pesq;
+		
+		ProjetoPesquisa pesquisa = new ProjetoPesquisa();
+		
+		ArrayList <Pesquisador> p = new ArrayList <Pesquisador>();
+		
+		for (int i=1; i<2;i++) {
+			pesq = new AlunoGraduacao();
+			pesq.lerDados();
+			p.add(pesq);			
+		}
+		for (int i=1; i<2;i++) {
+			pesq = new Professor();
+			pesq.lerDados();
+			p.add(pesq);			
+		}
+		
+		ProjetoPesquisa.listar();
+		
+		
+		
+		
+	} 
+		
+}
 	
-	}
-	}
 

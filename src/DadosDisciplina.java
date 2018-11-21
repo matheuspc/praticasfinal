@@ -1,40 +1,35 @@
 import java.util.*;
 
-public class DadosDisciplina {
+public abstract class DadosDisciplina {
 
-	private ArrayList <Disciplina> disciplinas = new ArrayList <Disciplina>();
+	private static ArrayList <Disciplina> disciplinas = new ArrayList <Disciplina>();
 	
-	public void cadastrar (Disciplina d) {
-		this.disciplinas.add(d);
-		System.out.println("Total de disciplinas inseridas...: ");
-		System.out.println(this.disciplinas.size());
+	public static void cadastrar (Disciplina d) {
+		disciplinas.add(d);
 	}
 	
-	public void listar() {
-		for (Disciplina objeto: disciplinas) {
-			objeto.mostrarDados();
+	public static void listar() {
+		for (Disciplina d: disciplinas) {
+			d.mostrarDados();
 		}
 	}
 	
-	public Disciplina buscar (String codigo) {
-		Disciplina d = null;
-		for(Disciplina objeto: this.disciplinas) {
-			if(objeto.getCodigoDisciplina().equals(codigo)) {
-				d = objeto;
-				break;
+	public static Disciplina buscar (String codigo) {
+		for (Disciplina d: disciplinas) {
+			if(d.getCodigoDisciplina().equals(codigo)) {
+				return d;
 			}
 		}
-		return d;
+		return null;
 	}
 	
-	public boolean excluir (String codigo) {
-		Disciplina d = this.buscar(codigo);
-		if(d!=null) {
-			this.disciplinas.remove(codigo);
-			return true;
+	public static boolean excluir (String codigo) {
+		for(Disciplina d: disciplinas) {
+			if(d.getCodigoDisciplina().equals(codigo)) {
+				disciplinas.remove(codigo);
+				return true;
+			}
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 }

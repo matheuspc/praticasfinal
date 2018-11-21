@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public abstract class Aluno extends Pessoa {
+public abstract class Aluno extends Pessoa implements Pesquisador {
 	
-	String matriculaAluno;
-	String situacao;
-	byte situacaoMatricula;
-	Curso curso;
+	private String matriculaAluno;
+	private String situacao;
+	private byte situacaoMatricula;
+	private Curso curso;
 	
 	public void setCurso(Curso curso) {
 		this.curso = curso;
@@ -77,7 +77,7 @@ public abstract class Aluno extends Pessoa {
 		else if(this.situacaoMatricula == 3) {
 			System.out.println("Desligado");
 		}
-		this.curso.mostrarDados();
+		//this.curso.mostrarDados();
 
 	}
 

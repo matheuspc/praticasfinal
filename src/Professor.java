@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Professor extends Funcionario {
 	
-	String titulacao;
-	String areaPesquisa;
-	int numeroHorasAula;
-	double valorHoraAula;
+	private String titulacao;
+	private String areaPesquisa;
+	private int numeroHorasAula;
+	private double valorHoraAula;
 	
 	public String getTitulacao() {
 		return titulacao;
@@ -59,5 +59,17 @@ public class Professor extends Funcionario {
 
 	public double calcSalario() {
 		return numeroHorasAula * valorHoraAula;
+	}
+
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getTipo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -8,7 +8,7 @@ public class AlunoGraduacao extends Aluno {
 		
 	}
 	
-	AlunoGraduacao(){
+	AlunoGraduacao (){
 		
 	}
 	
@@ -26,13 +26,25 @@ public class AlunoGraduacao extends Aluno {
 		
 		super.lerDados();
 		
-		this.cg = new CursoGraduacao();
+		cg = new CursoGraduacao();
 		this.cg.lerDados();		
 	}
 	
 	public void mostrarDados() {
 		super.mostrarDados();
 		this.cg.mostrarDados();
+	}
+
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getTipo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

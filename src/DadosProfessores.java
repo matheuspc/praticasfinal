@@ -1,41 +1,36 @@
 import java.util.*;
 
-public class DadosProfessores {
+public abstract class DadosProfessores {
 
-	private ArrayList <Professor> professores = new ArrayList <Professor> ();
+	private static ArrayList <Professor> professores = new ArrayList <Professor> ();
 	
-	public void cadastrar (Professor p) {
-		this.professores.add(p);
-		System.out.println("Total de professores inseridos...: ");
-		System.out.println(this.professores.size());
+	public static void cadastrar (Professor p) {
+		professores.add(p);
 	}
 	
-	public void listar () {
-		for (Professor objeto: professores) {
-			objeto.mostrarDados();
+	public static void listar () {
+		for(Professor p: professores) {
+			p.mostrarDados();
 		}
 	}
 	
-	public Professor buscar (String cpf) {
-		Professor p = null;
-		for(Professor objeto: this.professores) {
-			if(objeto.getCpfPessoa().equals(cpf)) {
-				p = objeto;
-				break;
+	public static Professor buscar(String cpf) {
+		for(Professor p: professores) {
+			if(p.getCpfPessoa().equals(cpf)) {
+				return p;
 			}
 		}
-		return p;
+		return null;
 	}
 	
-	public boolean excluir (String cpf) {
-		Professor p = this.buscar(cpf);
-		if(p!=null) {
-			this.professores.remove(cpf);
-			return true;
+	public static boolean excluir(String cpf) {
+		for(Professor p: professores) {
+			if(p.getCpfPessoa().equals(cpf)) {
+				professores.remove(cpf);
+				return true;
+			}
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 	
 }

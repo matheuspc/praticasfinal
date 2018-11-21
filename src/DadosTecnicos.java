@@ -1,40 +1,36 @@
 import java.util.*;
 
-public class DadosTecnicos {
+public abstract class DadosTecnicos {
 
-	private ArrayList <Tecnicos> tecnicos = new ArrayList <Tecnicos>();
+	private static ArrayList <Tecnicos> tecnicos = new ArrayList <Tecnicos>();
 	
-	public void cadastrar (Tecnicos cpf) {
-		this.tecnicos.add(cpf);
-		System.out.println("Quantidade de técnicos inseridos...: ");
-		System.out.println(this.tecnicos.size());
+	public static void cadastrar (Tecnicos t) {
+		tecnicos.add(t);
 	}
 	
-	public void listar() {
-		for (Tecnicos objeto: tecnicos) {
-			objeto.mostrarDados();
+	public static void listar () {
+		for(Tecnicos t: tecnicos) {
+			t.mostrarDados();
 		}
 	}
 	
-	public Tecnicos buscar (String cpf) {
-		Tecnicos t = null;
-		for(Tecnicos objeto: tecnicos) {
-			if(objeto.getCpfPessoa().equals(cpf)) {
-				t = objeto;
-				break;
+	public static Tecnicos buscar(String cpf) {
+		for(Tecnicos t: tecnicos) {
+			if(t.getCpfPessoa().equals(cpf)) {
+				return t;
 			}
 		}
-		return t;
+		return null;
 	}
 	
-	public boolean excluir (String cpf) {
-		Tecnicos t = this.buscar(cpf);
-		if(t!=null) {
-			this.tecnicos.remove(cpf);
-			return true;
+	public static boolean excluir (String cpf) {
+		for(Tecnicos t: tecnicos) {
+			if(t.getCpfPessoa().equals(cpf)) {
+				tecnicos.remove(cpf);
+				return true;
+			}
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
+	
 }
