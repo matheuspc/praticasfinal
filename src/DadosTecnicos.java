@@ -4,7 +4,7 @@ public class DadosTecnicos {
 
 	private ArrayList <Tecnicos> tecnicos = new ArrayList <Tecnicos>();
 	
-	public void cadastrar (String cpf) {
+	public void cadastrar (Tecnicos cpf) {
 		this.tecnicos.add(cpf);
 		System.out.println("Quantidade de técnicos inseridos...: ");
 		System.out.println(this.tecnicos.size());

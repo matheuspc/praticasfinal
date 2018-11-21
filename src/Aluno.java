@@ -5,6 +5,11 @@ public abstract class Aluno extends Pessoa {
 	String matriculaAluno;
 	String situacao;
 	byte situacaoMatricula;
+	Curso curso;
+	
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
 	
 	public String getSituacao() {
 		return situacao;
@@ -72,7 +77,7 @@ public abstract class Aluno extends Pessoa {
 		else if(this.situacaoMatricula == 3) {
 			System.out.println("Desligado");
 		}
-		//this.curso.mostrarDados();
+		this.curso.mostrarDados();
 
 	}
 

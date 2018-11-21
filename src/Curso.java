@@ -75,7 +75,7 @@ public abstract class Curso {
 		while(!setNomeCurso(s.nextLine()));
 		
 		System.out.println("Digite o código do curso: ");
-		while(!setCodigoCurso(s.nextInt()));
+		while(!setCodigoCurso(s.nextLine()));
 		
 		System.out.println("Digite a duração do curso: ");
 		while(!setDuracaoCurso(s.nextInt()));

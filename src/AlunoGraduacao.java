@@ -8,6 +8,10 @@ public class AlunoGraduacao extends Aluno {
 		
 	}
 	
+	AlunoGraduacao(){
+		
+	}
+	
 	public CursoGraduacao getCursoGraduacao() {
 		return cg;
 	}

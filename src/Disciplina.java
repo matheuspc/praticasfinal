@@ -61,7 +61,7 @@ public class Disciplina {
 		Scanner s = new Scanner(System.in);
 		
 		System.out.println("Digite o código da disciplina: ");
-		while(!setCodigoDisciplina(s.nextInt()));
+		while(!setCodigoDisciplina(s.nextLine()));
 		
 		System.out.println("Digite o nome da disciplina: ");
 		while(!setNomeDisciplina(s.nextLine()));

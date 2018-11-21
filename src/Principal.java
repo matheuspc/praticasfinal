@@ -3,27 +3,24 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-	/*AlunoGraduacao a = new AlunoGraduacao();
-	a.lerDados();
-	
-	CursoGraduacao c = new CursoGraduacao();
-	c.lerDados();
-	
-	a.setCursoGraduacao(c);
+		DadosAlunos alunos = new DadosAlunos();
+		DadosCurso cursos = new DadosCurso();
+		DadosDisciplina disciplinas = new DadosDisciplina();
+		DadosFuncionario funcionarios = new DadosFuncionario();
+		DadosProfessores professores = new DadosProfessores();
+		DadosTecnicos tecnicos = new DadosTecnicos();
 		
-	a.mostrarDados();
-	a.getCursoGraduacao().mostrarDados();
-	
-	Disciplina d = new Disciplina();
-	d.lerDados();
-	*/
-	
-	CursoGraduacao cg = new CursoGraduacao();
-	cg.lerDados();
+		AlunoGraduacao a = new AlunoGraduacao();
+		a.lerDados();
+		alunos.cadastrar(a);
+		alunos.listar();
 		
-	//AlunoGraduacao ag = new AlunoGraduacao(cg);	
-	Disciplina d = new Disciplina(cg);
-	d.lerDados();
-	d.mostrarDados();
-}
+		CursoGraduacao c = new CursoGraduacao();
+		c.lerDados();
+		cursos.cadastrar(c);
+
+		a.setCurso(c);
+	
 	}
+	}
+
