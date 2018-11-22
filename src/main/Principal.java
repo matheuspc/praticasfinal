@@ -1,7 +1,7 @@
 package main;
 import model.*;
+import Persistencia.*;
 import java.util.*;
-
 import DAO.DadosAlunoGraduacao;
 import model.AlunoGraduacao;
 import model.Pesquisador;
@@ -27,24 +27,19 @@ public class Principal {
 		
 		folha.relatorioFolha(tec);*/
 		
-/*		Pesquisador pesquisador;
+		AlunoGraduacao ag = new AlunoGraduacao();;
 		
-		ProjetoPesquisa projetop = new ProjetoPesquisa();
+		//ArrayList <AlunoGraduacao> alunog = new ArrayList <AlunoGraduacao>();
+		ag.lerDados();
+		//alunog.add(ag);
 		
-		ArrayList <Pesquisador> equipe = new ArrayList <Pesquisador>();
+		//DadosAlunoGraduacao.listar();
+		DadosAlunoGraduacao.adicionar(ag);
 		
-		for (int i=1;i<2;i++) {
-			pesquisador = new AlunoGraduacao();
-			pesquisador.lerDados();
-			equipe.add(pesquisador);
-		}*/
-/*		for (int i=1;i<2;i++) {
-			pesquisador = new Professor();
-			pesquisador.lerDados();
-			equipe.add(pesquisador);
-		}*/
-
+		//DadosAlunoGraduacao.listar();
+		//AlunoGraduacao ag = new AlunoGraduacao();
 		DadosAlunoGraduacao.listar();
+		
 	} 
 		
 }

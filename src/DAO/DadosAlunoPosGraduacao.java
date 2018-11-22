@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 public abstract class DadosAlunoPosGraduacao implements Serializable {
 	
-	private static ArrayList <AlunoPosGraduacao> alunos = new ArrayList<AlunoPosGraduacao>();
+	private static ArrayList <AlunoPosGraduacao> alunos;// = new ArrayList<AlunoPosGraduacao>();
 	
 	static {
 		alunos = (ArrayList <AlunoPosGraduacao>)Persist.recuperar("alunosP.dat");

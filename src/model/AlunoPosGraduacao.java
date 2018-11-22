@@ -11,7 +11,7 @@ public class AlunoPosGraduacao extends Aluno {
 	AlunoPosGraduacao(CursoPosGraduacao cpg){
 		
 	}
-	AlunoPosGraduacao(){
+	public AlunoPosGraduacao(){
 		
 	}
 

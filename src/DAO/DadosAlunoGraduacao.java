@@ -7,10 +7,10 @@ import model.AlunoGraduacao;
 
 public abstract class DadosAlunoGraduacao implements Serializable {
 	
-	private static ArrayList <AlunoGraduacao> alunos = new ArrayList <AlunoGraduacao>();
+	private static ArrayList <AlunoGraduacao> alunos; //= new ArrayList <AlunoGraduacao>();
 	
 	static {
-		alunos = (ArrayList <AlunoGraduacao>)Persist.recuperar("alunosG.dat");
+		alunos = (ArrayList <AlunoGraduacao>)Persist.recuperar("C:\\Users\\matheus.cardoso\\eclipse-workspace\\ProjectPoo1\\src\\DAO\\alunosG.dat");
 		if(alunos==null) {
 			alunos = new ArrayList<AlunoGraduacao>();
 		}
@@ -18,12 +18,16 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 	
 	public static void adicionar (AlunoGraduacao a) {
 		alunos.add(a);
-		boolean r = Persist.gravar(alunos, "alunosG.dat");
+		boolean r = Persist.gravar(alunos, "C:\\Users\\matheus.cardoso\\eclipse-workspace\\ProjectPoo1\\src\\DAO\\alunosG.dat");
 	}
 	
 	public static void listar() {
 		for (AlunoGraduacao a: alunos) {
-			a.mostrarDados();
+			//a.mostrarDados();
+			System.out.println("Nome: " + a.getNome());
+			System.out.println("CPF: " + a.getCpfPessoa());
+			System.out.println("Matricula: " + a.getMatriculaAluno());
+			System.out.println("--------------------------------");
 		}
 	}
 	

@@ -59,6 +59,14 @@ public class Principal extends JFrame {
 		mnNewMenu.add(mntmGraduao);
 		
 		JMenuItem mntmPsGraduao = new JMenuItem("P\u00F3s Gradua\u00E7\u00E3o");
+		mntmPsGraduao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CadastroAlunoPos cap = new CadastroAlunoPos();
+				cap.setVisible(true);
+				
+				
+			}
+		});
 		mnNewMenu.add(mntmPsGraduao);
 		
 		JMenu mnFuncionrio = new JMenu("Funcion\u00E1rio");
