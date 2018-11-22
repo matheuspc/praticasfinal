@@ -9,10 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -26,6 +29,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 	private JTextField cpfAlunoG;
 	private JTextField matriculaAlunoG;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -49,7 +53,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 	public CadastroAlunoGraduacao() {
 		setTitle("Cadastro de Alunos - Gschool v1.0");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 593, 456);
+		setBounds(100, 100, 391, 437);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -67,53 +71,53 @@ public class CadastroAlunoGraduacao extends JFrame {
 		
 		JLabel lblCpf = new JLabel("CPF");
 		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblCpf.setBounds(10, 65, 65, 22);
+		lblCpf.setBounds(10, 61, 65, 22);
 		contentPane.add(lblCpf);
 		
 		cpfAlunoG = new JTextField();
 		cpfAlunoG.setColumns(10);
-		cpfAlunoG.setBounds(10, 98, 219, 20);
+		cpfAlunoG.setBounds(10, 82, 219, 20);
 		contentPane.add(cpfAlunoG);
 		
 		JLabel lblMatrcula = new JLabel("Matr\u00EDcula");
 		lblMatrcula.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblMatrcula.setBounds(10, 129, 65, 22);
+		lblMatrcula.setBounds(10, 113, 65, 22);
 		contentPane.add(lblMatrcula);
 		
 		matriculaAlunoG = new JTextField();
 		matriculaAlunoG.setColumns(10);
-		matriculaAlunoG.setBounds(10, 162, 219, 20);
+		matriculaAlunoG.setBounds(10, 146, 219, 20);
 		contentPane.add(matriculaAlunoG);
 		
 		JLabel lblSituaoDaMatrcula = new JLabel("Situa\u00E7\u00E3o");
 		lblSituaoDaMatrcula.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblSituaoDaMatrcula.setBounds(10, 193, 146, 22);
+		lblSituaoDaMatrcula.setBounds(10, 177, 146, 22);
 		contentPane.add(lblSituaoDaMatrcula);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Matriculado");
-		buttonGroup.add(rdbtnNewRadioButton);
-		rdbtnNewRadioButton.setBounds(10, 222, 109, 23);
-		contentPane.add(rdbtnNewRadioButton);
+		JRadioButton matriculado = new JRadioButton("Matriculado");
+		buttonGroup_1.add(matriculado);
+		matriculado.setBounds(10, 206, 109, 23);
+		contentPane.add(matriculado);
 		
-		JRadioButton rdbtnDesligado = new JRadioButton("Desligado");
-		buttonGroup.add(rdbtnDesligado);
-		rdbtnDesligado.setBounds(121, 222, 109, 23);
-		contentPane.add(rdbtnDesligado);
+		JRadioButton desligado = new JRadioButton("Desligado");
+		buttonGroup_1.add(desligado);
+		desligado.setBounds(120, 206, 109, 23);
+		contentPane.add(desligado);
 		
-		JRadioButton rdbtnTrancado = new JRadioButton("Trancado");
-		buttonGroup.add(rdbtnTrancado);
-		rdbtnTrancado.setBounds(232, 222, 109, 23);
-		contentPane.add(rdbtnTrancado);
+		JRadioButton trancado = new JRadioButton("Trancado");
+		buttonGroup_1.add(trancado);
+		trancado.setBounds(232, 206, 109, 23);
+		contentPane.add(trancado);
 		
 		JLabel lblSelecioneOCurso = new JLabel("Selecione o curso");
 		lblSelecioneOCurso.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblSelecioneOCurso.setBounds(10, 256, 146, 22);
+		lblSelecioneOCurso.setBounds(10, 236, 146, 22);
 		contentPane.add(lblSelecioneOCurso);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"", "Administra\u00E7\u00E3o", "Direito", "Medicina", "Sistemas de Informa\u00E7\u00E3o"}));
-		comboBox.setBounds(10, 289, 146, 20);
-		contentPane.add(comboBox);
+		JComboBox cursoBox = new JComboBox();
+		cursoBox.setModel(new DefaultComboBoxModel(new String[] {"", "Administra\u00E7\u00E3o", "Direito", "Medicina", "Sistemas"}));
+		cursoBox.setBounds(10, 269, 192, 20);
+		contentPane.add(cursoBox);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.addActionListener(new ActionListener() {
@@ -125,16 +129,32 @@ public class CadastroAlunoGraduacao extends JFrame {
 				ag.setMatriculaAluno(matriculaAlunoG.getText());
 				ag.setNomePessoa(nameAlunoG.getText());
 				
+				if(matriculado.isSelected()) {
+					ag.setSituacao("m");
+				}
+				else if (trancado.isSelected()) {
+					ag.setSituacao("t");
+				}
+				else if (desligado.isSelected()) {
+					ag.setSituacao("d");
+				}
+				
+				if (cursoBox.getSelectedItem().equals("Sistemas")) {
+					JOptionPane.showMessageDialog(null, "Sistemas efetuado com sucesso!");
+				}
+				
+				//ag.setCursoGraduacao(cg);
 				DadosAlunoGraduacao.adicionar(ag);
 				
 				nameAlunoG.setText("");
 				cpfAlunoG.setText("");
 				matriculaAlunoG.setText("");
+				//buttonGroup.setSelected(null, b);
 				
-				
+				//JOptionPane.showMessageDialog(null, "Cadastro efetuado com sucesso!");
 			}
 		});
-		btnCadastrar.setBounds(10, 351, 109, 23);
+		btnCadastrar.setBounds(120, 352, 109, 23);
 		contentPane.add(btnCadastrar);
 	}
 }
