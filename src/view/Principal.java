@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import javax.swing.JButton;
 
 public class Principal extends JFrame {
 

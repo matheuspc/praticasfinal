@@ -173,5 +173,18 @@ public class CadastroAlunoPos extends JFrame {
 		dtConclusaoPos.setColumns(10);
 		dtConclusaoPos.setBounds(10, 330, 126, 20);
 		view.add(dtConclusaoPos);
+		
+		JLabel lblPesquisador = new JLabel("\u00C9 Pesquisador?");
+		lblPesquisador.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblPesquisador.setBounds(260, 28, 90, 22);
+		view.add(lblPesquisador);
+		
+		JRadioButton rdbtnSim = new JRadioButton("Sim");
+		rdbtnSim.setBounds(260, 50, 109, 23);
+		view.add(rdbtnSim);
+		
+		JRadioButton rdbtnNo = new JRadioButton("N\u00E3o");
+		rdbtnNo.setBounds(260, 70, 109, 23);
+		view.add(rdbtnNo);
 	}
 }
