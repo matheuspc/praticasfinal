@@ -24,20 +24,32 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 	public static void listar() {
 		for (AlunoGraduacao a: alunos) {
 			//a.mostrarDados();
-			System.out.println("Nome: " + a.getNome());
+			System.out.println("Nome: " + a.getNomePessoa());
 			System.out.println("CPF: " + a.getCpfPessoa());
 			System.out.println("Matricula: " + a.getMatriculaAluno());
 			System.out.println("--------------------------------");
 		}
 	}
 	
+	public static ArrayList<AlunoGraduacao> retorno() {
+		return alunos;
+	}
+	
 	public static AlunoGraduacao buscar (String matricula) {
-		for (AlunoGraduacao a: alunos) {
-			if(a.getMatriculaAluno().equals(matricula)) {
-				return a;
+		try {
+			
+			for (AlunoGraduacao a: alunos) {				
+					if(a.getMatriculaAluno().equals(matricula)) {
+						return a;
+					}
+				
 			}
+			return null;
+			
+		} catch (Exception e) {
+			System.out.println(e.getStackTrace());
+			return null;
 		}
-		return null;
 	}
 	
 	public static boolean excluir(String matricula) {
@@ -50,5 +62,6 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 		}
 		return false;	
 	}
+
 
 }

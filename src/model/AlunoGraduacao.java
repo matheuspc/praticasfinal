@@ -1,7 +1,8 @@
 package model;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class AlunoGraduacao extends Aluno {
+public class AlunoGraduacao extends Aluno implements Serializable{
 	
 	CursoGraduacao cg;
 	
@@ -46,6 +47,12 @@ public class AlunoGraduacao extends Aluno {
 	public String getTipo() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getNome();
 	}
 
 }

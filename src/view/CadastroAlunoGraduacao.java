@@ -30,6 +30,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 	private JTextField matriculaAlunoG;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+	private final ButtonGroup buttonGroup_2 = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -146,10 +147,22 @@ public class CadastroAlunoGraduacao extends JFrame {
 				//ag.setCursoGraduacao(cg);
 				DadosAlunoGraduacao.adicionar(ag);
 				
+				DadosAlunoGraduacao.listar();
+				
+				System.out.println(DadosAlunoGraduacao.retorno());
+				
+				
 				nameAlunoG.setText("");
 				cpfAlunoG.setText("");
 				matriculaAlunoG.setText("");
 				//buttonGroup.setSelected(null, b);
+				
+				
+			//	AlunoGraduacao alunim = DadosAlunoGraduacao.buscar(ag.getMatriculaAluno());
+				
+				//for (A)
+				
+				//System.out.println(alunim.getNomePessoa());
 				
 				//JOptionPane.showMessageDialog(null, "Cadastro efetuado com sucesso!");
 			}
@@ -163,10 +176,12 @@ public class CadastroAlunoGraduacao extends JFrame {
 		contentPane.add(lblPesquisador);
 		
 		JRadioButton simPesquisador = new JRadioButton("Sim");
+		buttonGroup_2.add(simPesquisador);
 		simPesquisador.setBounds(10, 296, 109, 32);
 		contentPane.add(simPesquisador);
 		
 		JRadioButton naoPesquisador = new JRadioButton("N\u00E3o");
+		buttonGroup_2.add(naoPesquisador);
 		naoPesquisador.setBounds(120, 296, 109, 33);
 		contentPane.add(naoPesquisador);
 	}

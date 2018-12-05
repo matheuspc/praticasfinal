@@ -21,6 +21,7 @@ public class Persist {
 			return true;
 		}
 		catch (Exception e){
+			//System.out.println(e.getStackTrace());
 			return false;
 		}
 		

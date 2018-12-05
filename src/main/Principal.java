@@ -27,19 +27,23 @@ public class Principal {
 		
 		folha.relatorioFolha(tec);*/
 		
-		AlunoGraduacao ag = new AlunoGraduacao();;
+		//AlunoGraduacao ag = new AlunoGraduacao();;
 		
 		//ArrayList <AlunoGraduacao> alunog = new ArrayList <AlunoGraduacao>();
-		ag.lerDados();
+		//ag.lerDados();
 		//alunog.add(ag);
 		
 		//DadosAlunoGraduacao.listar();
-		DadosAlunoGraduacao.adicionar(ag);
+		//DadosAlunoGraduacao.adicionar(ag);
 		
 		//DadosAlunoGraduacao.listar();
 		//AlunoGraduacao ag = new AlunoGraduacao();
-		DadosAlunoGraduacao.listar();
 		
+		//System.out.println(DadosAlunoGraduacao.buscar("11611"));
+		//DadosAlunoGraduacao.excluirAll();
+		
+		DadosAlunoGraduacao.listar();
+
 	} 
 		
 }

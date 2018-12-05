@@ -1,7 +1,8 @@
 package model;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class AlunoPosGraduacao extends Aluno {
+public class AlunoPosGraduacao extends Aluno implements Serializable {
 	
 	String graduacao;
 	String anoInicio;

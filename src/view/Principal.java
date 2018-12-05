@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 import javax.swing.JButton;
+
+import model.*;
 
 public class Principal extends JFrame {
 
@@ -76,24 +79,68 @@ public class Principal extends JFrame {
 		mnCadastros.add(mnFuncionrio);
 		
 		JMenuItem mntmProfessor = new JMenuItem("Professor");
+		mntmProfessor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				CadastroProfessor cp = new CadastroProfessor();
+				cp.setVisible(true);
+				
+			}
+		});
 		mnFuncionrio.add(mntmProfessor);
 		
 		JMenuItem mntmTcnico = new JMenuItem("T\u00E9cnico");
+		mntmTcnico.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				CadastroTecnico ct = new CadastroTecnico();
+				ct.setVisible(true);
+			}
+		});
 		mnFuncionrio.add(mntmTcnico);
 		
 		JMenu mnCursos = new JMenu("Cursos");
 		mnCadastros.add(mnCursos);
 		
 		JMenuItem mntmGraduao_1 = new JMenuItem("Gradua\u00E7\u00E3o");
+		mntmGraduao_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				CadastroCursoGraduacao ccg = new CadastroCursoGraduacao();
+				ccg.setVisible(true);
+				
+			}
+		});
 		mnCursos.add(mntmGraduao_1);
 		
 		JMenuItem mntmPsGraduao_1 = new JMenuItem("P\u00F3s Gradua\u00E7\u00E3o");
+		mntmPsGraduao_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				CadastroCursoPos ccp = new CadastroCursoPos();
+				ccp.setVisible(true);
+			
+			}
+		});
 		mnCursos.add(mntmPsGraduao_1);
 		
 		JMenuItem mntmDisciplinas = new JMenuItem("Disciplinas");
+		mntmDisciplinas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				CadastroDisciplinas cd = new CadastroDisciplinas();
+				cd.setVisible(true);
+			
+			}
+		});
 		mnCadastros.add(mntmDisciplinas);
 		
 		JMenuItem mntmPesquisador = new JMenuItem("Pesquisador");
+		mntmPesquisador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			}
+		});
 		mnCadastros.add(mntmPesquisador);
 		
 		JMenu mnVisualizar = new JMenu("Visualizar");

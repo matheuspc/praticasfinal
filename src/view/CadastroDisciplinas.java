@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CadastroDisciplinas extends JFrame {
 
@@ -39,7 +41,8 @@ public class CadastroDisciplinas extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroDisciplinas() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setAlwaysOnTop(true);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 272, 293);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -83,6 +86,10 @@ public class CadastroDisciplinas extends JFrame {
 		panel.add(textField_2);
 		
 		JButton button = new JButton("Cadastrar");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		button.setBounds(68, 213, 109, 23);
 		panel.add(button);
 		
