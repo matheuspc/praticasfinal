@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -43,7 +44,7 @@ public class VisualizarAlunos extends JFrame {
 	 * Create the frame.
 	 */
 	public VisualizarAlunos() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 703, 499);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -58,7 +59,7 @@ public class VisualizarAlunos extends JFrame {
 	
     public static void mostrarDadosTabela(JTable tabela){
         //1a. parte - definir modelo de dados
-        String[] colunas = new String []{"Nome"};  //,"Endereco","CPF","Sexo","Casado"};  
+        String[] colunas = new String []{"Nome", "CPF", "Matrícula"};  
         String[][] dados = new String[0][0];
         DefaultTableModel modelo = new DefaultTableModel(dados, colunas);  
 
@@ -66,13 +67,10 @@ public class VisualizarAlunos extends JFrame {
         tabela.setModel(modelo);
 
         //3a. parte - adicionar linhas na tabela
-        for (AlunoGraduacao p : DadosAlunoGraduacao.retorno()){            
-            //String sexo;
-            //if (p.getSexo() == 'M') sexo = "Masculino";
-            //else sexo = "Feminino";
-            
-            modelo.addRow(new String [] {p.getNomePessoa()}); //, (), p.getCPF(), sexo, "Casado" } );
-            
+        ArrayList<AlunoGraduacao> lista = DadosAlunoGraduacao.retornaLista();
+        for (AlunoGraduacao a : DadosAlunoGraduacao.retornaLista()){
+            modelo.addRow(new String [] {a.getNomePessoa(), a.getCpfPessoa(), a.getMatriculaAluno()});
+
         }
     }
     

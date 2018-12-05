@@ -149,7 +149,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 				
 				DadosAlunoGraduacao.listar();
 				
-				System.out.println(DadosAlunoGraduacao.retorno());
+				//System.out.println(DadosAlunoGraduacao.retorno());
 				
 				
 				nameAlunoG.setText("");

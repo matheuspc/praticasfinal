@@ -31,9 +31,9 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 		}
 	}
 	
-	public static ArrayList<AlunoGraduacao> retorno() {
-		return alunos;
-	}
+	public static ArrayList<AlunoGraduacao> retornaLista() {
+        return alunos;
+    }
 	
 	public static AlunoGraduacao buscar (String matricula) {
 		try {

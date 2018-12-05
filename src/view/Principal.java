@@ -147,6 +147,14 @@ public class Principal extends JFrame {
 		menuBar.add(mnVisualizar);
 		
 		JMenuItem mntmAlunos = new JMenuItem("Alunos");
+		mntmAlunos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				VisualizarAlunos va = new VisualizarAlunos();
+				va.setVisible(true);
+				
+			}
+		});
 		mnVisualizar.add(mntmAlunos);
 		
 		JMenu mnFuncoinrios = new JMenu("Funcion\u00E1rios");
