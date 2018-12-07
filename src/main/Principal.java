@@ -42,8 +42,12 @@ public class Principal {
 		//System.out.println(DadosAlunoGraduacao.buscar("11611"));
 		//DadosAlunoGraduacao.excluirAll();
 		
-		DadosAlunoGraduacao.listar();
+		//DadosAlunoGraduacao.listar();
 
+		Professor p = new Professor();
+		p.lerDados();
+		p.mostrarDados();
+		
 	} 
 		
 }

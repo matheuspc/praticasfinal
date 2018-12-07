@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -17,6 +18,8 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 
 import model.*;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class Principal extends JFrame {
 
@@ -175,6 +178,7 @@ public class Principal extends JFrame {
 		JMenuItem mntmFolhaDePagamento = new JMenuItem("Folha de Pagamento");
 		mnFinanceiro.add(mntmFolhaDePagamento);
 		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.activeCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

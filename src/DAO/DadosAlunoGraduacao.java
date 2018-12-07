@@ -27,7 +27,7 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 			System.out.println("Nome: " + a.getNomePessoa());
 			System.out.println("CPF: " + a.getCpfPessoa());
 			System.out.println("Matricula: " + a.getMatriculaAluno());
-			System.out.println("--------------------------------");
+			System.out.println("----------------------------------");
 		}
 	}
 	

@@ -85,6 +85,7 @@ public abstract class Funcionario extends Pessoa{
 		while(!setCtpsFunc(s.nextLine()));
 				
 		System.out.println("Digite o salário do funcionário: ");
+		//EntradaDeDados.lerDouble(s.nextDouble());
 		while(!setSalarioFunc(s.nextDouble()));
 	}
 	
