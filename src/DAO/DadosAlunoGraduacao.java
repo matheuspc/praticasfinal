@@ -10,7 +10,7 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 	private static ArrayList <AlunoGraduacao> alunos; //= new ArrayList <AlunoGraduacao>();
 	
 	static {
-		alunos = (ArrayList <AlunoGraduacao>)Persist.recuperar("C:\\Users\\matheus.cardoso\\eclipse-workspace\\ProjectPoo1\\src\\DAO\\alunosG.dat");
+		alunos = (ArrayList <AlunoGraduacao>)Persist.recuperar("alunosG.dat");
 		if(alunos==null) {
 			alunos = new ArrayList<AlunoGraduacao>();
 		}
@@ -18,7 +18,7 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 	
 	public static void adicionar (AlunoGraduacao a) {
 		alunos.add(a);
-		boolean r = Persist.gravar(alunos, "C:\\Users\\matheus.cardoso\\eclipse-workspace\\ProjectPoo1\\src\\DAO\\alunosG.dat");
+		boolean r = Persist.gravar(alunos, "alunosG.dat");
 	}
 	
 	public static void listar() {
@@ -61,6 +61,17 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 						
 		}
 		return false;	
+	}
+	
+	public static void deletar (int i) {
+		alunos.remove(i);
+	}
+	
+	public static void alterar (int i, AlunoGraduacao ag) {
+		alunos.get(i).setNomePessoa(ag.getNomePessoa());
+		alunos.get(i).setCpf(ag.getCpfPessoa());
+		alunos.get(i).setMatriculaAluno(ag.getMatriculaAluno());
+		alunos.get(i).setSituacao(ag.getSituacao());
 	}
 
 

@@ -17,14 +17,14 @@ public abstract class Aluno extends Pessoa implements Pesquisador {
 	}
 
 	public boolean setSituacao(String situacao) {
-		if(situacao.equals("m") || situacao.equals("t") || situacao.equals("d")) {
-			if(situacao.equals("m")) {
+		if(situacao.equals("Matriculado") || situacao.equals("Trancado") || situacao.equals("Desligado")) {
+			if(situacao.equals("Matriculado")) {
 				this.situacaoMatricula = 1;
 			}
-			else if(situacao.equals("t")){
+			else if(situacao.equals("Trancado")){
 				this.situacaoMatricula = 2; 
 			}
-			else if(situacao.equals("d")) {
+			else if(situacao.equals("Desligado")) {
 				this.situacaoMatricula = 3;
 			}
 			this.situacao = situacao;

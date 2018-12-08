@@ -44,9 +44,11 @@ public class Principal {
 		
 		//DadosAlunoGraduacao.listar();
 
-		Professor p = new Professor();
-		p.lerDados();
-		p.mostrarDados();
+		//Professor p = new Professor();
+		//p.lerDados();
+		//p.mostrarDados();
+		
+		DadosAlunoGraduacao.listar();
 		
 	} 
 		

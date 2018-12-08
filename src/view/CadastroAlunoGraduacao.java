@@ -54,7 +54,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 	public CadastroAlunoGraduacao() {
 		setTitle("Cadastro de Alunos - Gschool v1.0");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 323, 437);
+		setBounds(100, 100, 335, 361);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -66,7 +66,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 		contentPane.add(lblNome);
 		
 		nameAlunoG = new JTextField();
-		nameAlunoG.setBounds(10, 30, 287, 20);
+		nameAlunoG.setBounds(10, 30, 299, 20);
 		contentPane.add(nameAlunoG);
 		nameAlunoG.setColumns(10);
 		
@@ -77,7 +77,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 		
 		cpfAlunoG = new JTextField();
 		cpfAlunoG.setColumns(10);
-		cpfAlunoG.setBounds(10, 82, 287, 20);
+		cpfAlunoG.setBounds(10, 82, 299, 20);
 		contentPane.add(cpfAlunoG);
 		
 		JLabel lblMatrcula = new JLabel("Matr\u00EDcula");
@@ -87,7 +87,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 		
 		matriculaAlunoG = new JTextField();
 		matriculaAlunoG.setColumns(10);
-		matriculaAlunoG.setBounds(10, 134, 287, 20);
+		matriculaAlunoG.setBounds(10, 134, 299, 20);
 		contentPane.add(matriculaAlunoG);
 		
 		JLabel lblSituaoDaMatrcula = new JLabel("Situa\u00E7\u00E3o");
@@ -110,14 +110,14 @@ public class CadastroAlunoGraduacao extends JFrame {
 		trancado.setBounds(229, 194, 109, 23);
 		contentPane.add(trancado);
 		
-		JLabel lblSelecioneOCurso = new JLabel("Selecione o curso");
-		lblSelecioneOCurso.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblSelecioneOCurso.setBounds(10, 224, 146, 22);
-		contentPane.add(lblSelecioneOCurso);
+		JLabel cursoAlunoGraduacao = new JLabel("Selecione o curso");
+		cursoAlunoGraduacao.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		cursoAlunoGraduacao.setBounds(10, 224, 146, 22);
+		contentPane.add(cursoAlunoGraduacao);
 		
 		JComboBox cursoBox = new JComboBox();
 		cursoBox.setModel(new DefaultComboBoxModel(new String[] {"", "Administra\u00E7\u00E3o", "Direito", "Medicina", "Sistemas"}));
-		cursoBox.setBounds(10, 245, 192, 20);
+		cursoBox.setBounds(10, 245, 299, 20);
 		contentPane.add(cursoBox);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
@@ -131,13 +131,13 @@ public class CadastroAlunoGraduacao extends JFrame {
 				ag.setNomePessoa(nameAlunoG.getText());
 				
 				if(matriculado.isSelected()) {
-					ag.setSituacao("m");
+					ag.setSituacao("Matriculado");
 				}
 				else if (trancado.isSelected()) {
-					ag.setSituacao("t");
+					ag.setSituacao("Trancado");
 				}
 				else if (desligado.isSelected()) {
-					ag.setSituacao("d");
+					ag.setSituacao("Desligado");
 				}
 				
 				if (cursoBox.getSelectedItem().equals("Sistemas")) {
@@ -167,22 +167,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 				//JOptionPane.showMessageDialog(null, "Cadastro efetuado com sucesso!");
 			}
 		});
-		btnCadastrar.setBounds(99, 351, 109, 23);
+		btnCadastrar.setBounds(108, 288, 109, 23);
 		contentPane.add(btnCadastrar);
-		
-		JLabel lblPesquisador = new JLabel("\u00C9 pesquisador?");
-		lblPesquisador.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblPesquisador.setBounds(10, 276, 146, 22);
-		contentPane.add(lblPesquisador);
-		
-		JRadioButton simPesquisador = new JRadioButton("Sim");
-		buttonGroup_2.add(simPesquisador);
-		simPesquisador.setBounds(10, 296, 109, 32);
-		contentPane.add(simPesquisador);
-		
-		JRadioButton naoPesquisador = new JRadioButton("N\u00E3o");
-		buttonGroup_2.add(naoPesquisador);
-		naoPesquisador.setBounds(120, 296, 109, 33);
-		contentPane.add(naoPesquisador);
 	}
 }
