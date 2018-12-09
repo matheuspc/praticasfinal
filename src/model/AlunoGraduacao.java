@@ -33,8 +33,8 @@ public class AlunoGraduacao extends Aluno implements Serializable{
 	}
 	
 	public void mostrarDados() {
-		super.mostrarDados();
-		this.cg.mostrarDados();
+		//super.mostrarDados();
+		//this.cg.mostrarDados();
 	}
 
 	@Override

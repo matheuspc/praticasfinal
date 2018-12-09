@@ -16,6 +16,10 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 		}
 	}
 	
+	public static ArrayList<AlunoGraduacao> retornaLista() {
+        return alunos;
+    }
+	
 	public static void adicionar (AlunoGraduacao a) {
 		alunos.add(a);
 		boolean r = Persist.gravar(alunos, "alunosG.dat");
@@ -23,17 +27,9 @@ public abstract class DadosAlunoGraduacao implements Serializable {
 	
 	public static void listar() {
 		for (AlunoGraduacao a: alunos) {
-			//a.mostrarDados();
-			System.out.println("Nome: " + a.getNomePessoa());
-			System.out.println("CPF: " + a.getCpfPessoa());
-			System.out.println("Matricula: " + a.getMatriculaAluno());
-			System.out.println("----------------------------------");
+			a.mostrarDados();
 		}
 	}
-	
-	public static ArrayList<AlunoGraduacao> retornaLista() {
-        return alunos;
-    }
 	
 	public static AlunoGraduacao buscar (String matricula) {
 		try {

@@ -20,6 +20,7 @@ import model.Tecnicos;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
@@ -104,11 +105,11 @@ public class FinanceiroFolhaPagamento extends JFrame {
         //3a. parte - adicionar linhas na tabela
         ArrayList<Funcionario> lista = DadosFuncionario.retornaLista();
         for (Funcionario f : DadosFuncionario.retornaLista()){
-        	String salario = String.valueOf(f.getSalarioFunc());
-        	String irrf = String.valueOf(f.getSalarioFunc() * 0.3378);
-        	String inss = String.valueOf(f.getSalarioFunc() * 0.11);
-        	String salarioLiquido = String.valueOf(f.getSalarioFunc() - (f.getSalarioFunc() * 0.3378) - (f.getSalarioFunc() * 0.11));
-            modelo.addRow(new String [] {f.getNomePessoa(), f.getClass().getName(), salario, irrf, inss, salarioLiquido});
+        	String salarioFormatado = String.format("%.2f", f.getSalarioFunc());
+        	String irrf = String.format("%.2f", f.getSalarioFunc() * 0.3378);
+        	String inss = String.format("%.2f", f.getSalarioFunc() * 0.11);
+            String salarioLiquido = String.format("%.2f", f.getSalarioFunc() - (f.getSalarioFunc() * 0.3378) - (f.getSalarioFunc() * 0.11));
+        	modelo.addRow(new String [] {f.getNomePessoa(), f.getClass().getName().substring(6), "R$ "+salarioFormatado, "R$ "+irrf, "R$ "+inss, "R$ "+salarioLiquido});
 
         }
     }

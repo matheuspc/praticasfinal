@@ -20,6 +20,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class CadastroAlunoGraduacao extends JFrame {
@@ -116,7 +117,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 		contentPane.add(cursoAlunoGraduacao);
 		
 		JComboBox cursoBox = new JComboBox();
-		cursoBox.setModel(new DefaultComboBoxModel(new String[] {"", "Administra\u00E7\u00E3o", "Direito", "Medicina", "Sistemas"}));
+		cursoBox.setModel(new DefaultComboBoxModel(new String[] {"<Object>"}));
 		cursoBox.setBounds(10, 245, 299, 20);
 		contentPane.add(cursoBox);
 		
