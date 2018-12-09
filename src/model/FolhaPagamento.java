@@ -10,7 +10,7 @@ public class FolhaPagamento {
 	public double somaFolha (ArrayList <? extends Funcionario> funcionarios) {
 		this.totalFolha = 0;
 		for (Funcionario f: funcionarios) {
-			this.totalFolha += f.calcSalario();
+			this.totalFolha += f.getSalarioFunc();
 			System.out.printf("\n Nome: %s \n Salario: %1.2f \n Categoria: %s \n", f.getNomePessoa(), f.getSalarioFunc(), f.getClass().getName());
 		}
 		return this.totalFolha;

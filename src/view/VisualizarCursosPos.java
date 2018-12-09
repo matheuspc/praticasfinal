@@ -9,18 +9,20 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import DAO.DadosAlunoGraduacao;
+import DAO.DadosCursoGraduacao;
+import DAO.DadosCursoPosGraduacao;
 import model.AlunoGraduacao;
+import model.CursoGraduacao;
+import model.CursoPosGraduacao;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-
-
-public class VisualizarAlunos extends JFrame {
+public class VisualizarCursosPos extends JFrame {
 
 	private JPanel contentPane;
-	private JTable tabelaAlunos;
+	private JTable tabelaCursosPos;
 	private JButton btnEditarAluno;
 
 	/**
@@ -30,7 +32,7 @@ public class VisualizarAlunos extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VisualizarAlunos frame = new VisualizarAlunos();
+					VisualizarCursosGraduacao frame = new VisualizarCursosGraduacao();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,11 +44,11 @@ public class VisualizarAlunos extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VisualizarAlunos() {
-		setTitle("GSchool v1.0 - Consultar Alunos Gradua\u00E7\u00E3o");
+	public VisualizarCursosPos() {
+		setTitle("GSchool v1.0 - Consulta Cursos P\u00F3s");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 703, 356);
-		contentPane = new JPanel();
+		contentPane = new JPanel();  
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -55,18 +57,18 @@ public class VisualizarAlunos extends JFrame {
 		scrollPane.setBounds(10, 11, 667, 254);
 		contentPane.add(scrollPane);
 		
-		tabelaAlunos = new JTable();
-		scrollPane.setViewportView(tabelaAlunos);
-		mostrarDadosTabela(tabelaAlunos);
+		tabelaCursosPos = new JTable();
+		scrollPane.setViewportView(tabelaCursosPos);
+		mostrarDadosTabela(tabelaCursosPos);
 		
 		JButton btnExcluirAluno = new JButton("Excluir");
 		btnExcluirAluno.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				if(tabelaAlunos.getSelectedRow() > -1) {
-					DadosAlunoGraduacao.deletar(tabelaAlunos.getSelectedRow());
+				if(tabelaCursosPos.getSelectedRow() > -1) {
+					DadosAlunoGraduacao.deletar(tabelaCursosPos.getSelectedRow());
 					JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
-					mostrarDadosTabela(tabelaAlunos);
+					mostrarDadosTabela(tabelaCursosPos);
 				}
 				
 			}
@@ -78,25 +80,22 @@ public class VisualizarAlunos extends JFrame {
 		btnEditarAluno.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				AlunoGraduacao ag = new AlunoGraduacao();
+				CursoPosGraduacao cpg = new CursoPosGraduacao();
 				
-				String nome = (String)tabelaAlunos.getValueAt(tabelaAlunos.getSelectedRow(), 0);
-				ag.setNomePessoa(nome);
+				String nome = (String)tabelaCursosPos.getValueAt(tabelaCursosPos.getSelectedRow(), 0);
+				cpg.setNomeCurso(nome);
 				
-				String cpf = (String)tabelaAlunos.getValueAt(tabelaAlunos.getSelectedRow(), 1);
-				ag.setCpf(cpf);
+				String codigo = (String)tabelaCursosPos.getValueAt(tabelaCursosPos.getSelectedRow(), 1);
+				cpg.setCodigoCurso(codigo);
 				
-				String matricula = (String)tabelaAlunos.getValueAt(tabelaAlunos.getSelectedRow(), 2);
-				ag.setMatriculaAluno(matricula);
+				String duracao = (String)tabelaCursosPos.getValueAt(tabelaCursosPos.getSelectedRow(), 2);
+				cpg.setDuracaoCurso(duracao);	
 				
-				String situacao = (String)tabelaAlunos.getValueAt(tabelaAlunos.getSelectedRow(), 3);
-				ag.setSituacao(situacao);
-				
-				DadosAlunoGraduacao.alterar(tabelaAlunos.getSelectedRow(), ag);
+				DadosCursoPosGraduacao.alterar(tabelaCursosPos.getSelectedRow(), cpg);
 				
 				JOptionPane.showMessageDialog(null, "Dados alterados com sucesso!");
 				
-				mostrarDadosTabela(tabelaAlunos);
+				mostrarDadosTabela(tabelaCursosPos);
 				
 			}
 		});
@@ -106,7 +105,7 @@ public class VisualizarAlunos extends JFrame {
 	
     public static void mostrarDadosTabela(JTable tabela){
         //1a. parte - definir modelo de dados
-        String[] colunas = new String []{"Nome", "CPF", "Matrícula", "Situação", "Curso"};  
+        String[] colunas = new String []{"Nome", "Código Curso", "Duração", "Disciplinas"};  
         String[][] dados = new String[0][0];
         DefaultTableModel modelo = new DefaultTableModel(dados, colunas);  
 
@@ -114,9 +113,9 @@ public class VisualizarAlunos extends JFrame {
         tabela.setModel(modelo);
 
         //3a. parte - adicionar linhas na tabela
-        ArrayList<AlunoGraduacao> lista = DadosAlunoGraduacao.retornaLista();
-        for (AlunoGraduacao a : DadosAlunoGraduacao.retornaLista()){
-            modelo.addRow(new String [] {a.getNomePessoa(), a.getCpfPessoa(), a.getMatriculaAluno(), a.getSituacao(), "Sistemas"});
+        ArrayList<CursoPosGraduacao> lista = DadosCursoPosGraduacao.retornaLista();
+        for (CursoPosGraduacao cpg : DadosCursoPosGraduacao.retornaLista()){
+            modelo.addRow(new String [] {cpg.getNomeCurso(), cpg.getCodigoCurso(), cpg.getDuracaoCurso(), "POO1"});
 
         }
     }

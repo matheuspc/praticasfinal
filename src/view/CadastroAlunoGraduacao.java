@@ -52,7 +52,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroAlunoGraduacao() {
-		setTitle("Cadastro de Alunos - Gschool v1.0");
+		setTitle("GSchool v1.0 - Cadastro Aluno Gradua\u00E7\u00E3o");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 335, 361);
 		contentPane = new JPanel();

@@ -20,6 +20,7 @@ import javax.swing.JButton;
 import model.*;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.Canvas;
 
 public class Principal extends JFrame {
 
@@ -45,9 +46,10 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
+		setTitle("GSchool v1.0 - Home");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\matheus.cardoso\\eclipse-workspace\\ProjectPoo1\\src\\iconMain.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 651, 491);
+		setBounds(100, 100, 860, 530);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -138,18 +140,25 @@ public class Principal extends JFrame {
 		});
 		mnCadastros.add(mntmDisciplinas);
 		
-		JMenuItem mntmPesquisador = new JMenuItem("Pesquisador");
-		mntmPesquisador.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			
-			}
-		});
-		mnCadastros.add(mntmPesquisador);
-		
 		JMenu mnVisualizar = new JMenu("Visualizar");
 		menuBar.add(mnVisualizar);
 		
-		JMenuItem mntmAlunos = new JMenuItem("Alunos");
+		JMenu mnAlunos = new JMenu("Alunos");
+		mnVisualizar.add(mnAlunos);
+		
+		JMenuItem mntmAlunos = new JMenuItem("Alunos Gradua\u00E7\u00E3o");
+		mnAlunos.add(mntmAlunos);
+		
+		JMenuItem mntmAlunoPs = new JMenuItem("Aluno P\u00F3s");
+		mnAlunos.add(mntmAlunoPs);
+		mntmAlunoPs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				VisualizarAlunosPos vap = new VisualizarAlunosPos();
+				vap.setVisible(true);
+			
+			}
+		});
 		mntmAlunos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
@@ -158,24 +167,80 @@ public class Principal extends JFrame {
 				
 			}
 		});
-		mnVisualizar.add(mntmAlunos);
 		
 		JMenu mnFuncoinrios = new JMenu("Funcion\u00E1rios");
 		mnVisualizar.add(mnFuncoinrios);
 		
 		JMenuItem mntmProfessor_1 = new JMenuItem("Professores");
+		mntmProfessor_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				VisualizarProfessores vp = new VisualizarProfessores();
+				vp.setVisible(true);
+			
+			}
+		});
 		mnFuncoinrios.add(mntmProfessor_1);
 		
 		JMenuItem mntmTcnicos = new JMenuItem("T\u00E9cnicos");
+		mntmTcnicos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				VisualizarTecnicos vt = new VisualizarTecnicos();
+				vt.setVisible(true);
+				
+			}
+		});
 		mnFuncoinrios.add(mntmTcnicos);
 		
-		JMenuItem mntmCursos = new JMenuItem("Cursos");
-		mnVisualizar.add(mntmCursos);
+		JMenu mnCursos_1 = new JMenu("Cursos");
+		mnVisualizar.add(mnCursos_1);
+		
+		JMenuItem mntmGraduao_2 = new JMenuItem("Gradua\u00E7\u00E3o");
+		mntmGraduao_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+			VisualizarCursosGraduacao vcg = new VisualizarCursosGraduacao();
+			vcg.setVisible(true);
+			
+			}
+		});
+		mnCursos_1.add(mntmGraduao_2);
+		
+		JMenuItem mntmPsGraduao_2 = new JMenuItem("P\u00F3s Gradua\u00E7\u00E3o");
+		mntmPsGraduao_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				VisualizarCursosPos vcp = new VisualizarCursosPos();
+				vcp.setVisible(true);
+				
+			}
+		});
+		mnCursos_1.add(mntmPsGraduao_2);
+		
+		JMenuItem mntmDisciplinas_1 = new JMenuItem("Disciplinas");
+		mntmDisciplinas_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				VisualizarDisciplinas vd = new VisualizarDisciplinas();
+				vd.setVisible(true);
+			
+			}
+		});
+		mnVisualizar.add(mntmDisciplinas_1);
 		
 		JMenu mnFinanceiro = new JMenu("Financeiro");
 		menuBar.add(mnFinanceiro);
 		
 		JMenuItem mntmFolhaDePagamento = new JMenuItem("Folha de Pagamento");
+		mntmFolhaDePagamento.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				FinanceiroFolhaPagamento ffp = new FinanceiroFolhaPagamento();
+				ffp.setVisible(true);
+				
+			}
+		});
 		mnFinanceiro.add(mntmFolhaDePagamento);
 		contentPane = new JPanel();
 		contentPane.setBackground(SystemColor.activeCaption);

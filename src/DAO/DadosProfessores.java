@@ -5,11 +5,12 @@ import Persistencia.Persist;
 
 import java.io.*;
 
+import model.CursoPosGraduacao;
 import model.Professor;
 
 public abstract class DadosProfessores implements Serializable {
 
-	private static ArrayList <Professor> professores = new ArrayList <Professor> ();
+	private static ArrayList <Professor> professores;//= new ArrayList <Professor> ();
 	
 	static {
 		professores = (ArrayList <Professor>)Persist.recuperar("professores.dat");
@@ -18,10 +19,25 @@ public abstract class DadosProfessores implements Serializable {
 		}
 	}
 	
+	public static ArrayList <Professor> retornaLista(){
+		return professores;
+	}
+	
 	public static void cadastrar (Professor p) {
 		professores.add(p);
 		boolean r = Persist.gravar(professores, "professores.dat");
 	}
+	
+	public static void deletar (int i) {
+		professores.remove(i);
+	}
+	
+	public static void alterar (int i, Professor p) {
+		//professores.get(i).setNomeCurso((cpg.getNomeCurso()));
+		//professores.get(i).setCodigoCurso(cpg.getCodigoCurso());
+		//professores.get(i).setDuracaoCurso(cpg.getDuracaoCurso());
+	}
+	
 	
 	public static void listar () {
 		for(Professor p: professores) {

@@ -13,7 +13,7 @@ public class Disciplina {
 		
 	}
 	
-	Disciplina (){
+	public Disciplina (){
 		
 	}
 	
@@ -87,7 +87,7 @@ public class Disciplina {
 		System.out.println("Nome da disciplina: " + this.nomeDisciplina);
 		System.out.println("Carga horária da disciplina: " + this.cargaHoraria);
 		//curso.mostrarDados();
-		this.professor.mostrarDados();
+		//this.professor.mostrarDados();
 	}
 	
 }

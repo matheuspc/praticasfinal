@@ -6,7 +6,7 @@ public abstract class Curso {
 	
 	private String codigoCurso;
 	private String nomeCurso;
-	private int duracaoCurso;
+	private String duracaoCurso;
 	private ArrayList <Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	public void adicionarDisciplinas(Disciplina d) {
@@ -53,12 +53,12 @@ public abstract class Curso {
 		}
 	}
 
-	public int getDuracaoCurso() {
+	public String getDuracaoCurso() {
 		return duracaoCurso;
 	}
 
-	public boolean setDuracaoCurso(int duracaoCurso) {
-		if(duracaoCurso>0) {
+	public boolean setDuracaoCurso(String duracaoCurso) {
+		if(duracaoCurso.length() > 0) {
 			this.duracaoCurso = duracaoCurso;
 			return true;
 		}
@@ -79,7 +79,7 @@ public abstract class Curso {
 		while(!setCodigoCurso(s.nextLine()));
 		
 		System.out.println("Digite a duração do curso: ");
-		while(!setDuracaoCurso(s.nextInt()));
+		while(!setDuracaoCurso(s.nextLine()));
 	}
 	
 	public void mostrarDados() {

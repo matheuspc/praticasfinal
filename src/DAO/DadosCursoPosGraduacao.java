@@ -5,16 +5,31 @@ import Persistencia.Persist;
 
 import java.io.*;
 
+import model.CursoGraduacao;
 import model.CursoPosGraduacao;
 
 public abstract class DadosCursoPosGraduacao implements Serializable {
 
-	private static ArrayList <CursoPosGraduacao> cursos = new ArrayList <CursoPosGraduacao>();
+	private static ArrayList <CursoPosGraduacao> cursos;
 	
 	static {
 		cursos = (ArrayList <CursoPosGraduacao>)Persist.recuperar("cursosP.dat");
 		if(cursos==null)
 			cursos = new ArrayList <CursoPosGraduacao>();
+	}
+	
+	public static ArrayList <CursoPosGraduacao> retornaLista(){
+		return cursos;
+	}
+	
+	public static void deletar (int i) {
+		cursos.remove(i);
+	}
+	
+	public static void alterar (int i, CursoPosGraduacao cpg) {
+		cursos.get(i).setNomeCurso((cpg.getNomeCurso()));
+		cursos.get(i).setCodigoCurso(cpg.getCodigoCurso());
+		cursos.get(i).setDuracaoCurso(cpg.getDuracaoCurso());
 	}
 	
 	public static void cadastrar (CursoPosGraduacao c) {

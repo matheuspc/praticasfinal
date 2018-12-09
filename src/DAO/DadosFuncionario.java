@@ -7,13 +7,17 @@ import java.io.*;
 
 public abstract class DadosFuncionario implements Serializable {
 
-	private static ArrayList <Funcionario> funcionarios = new ArrayList <Funcionario>();
+	private static ArrayList <Funcionario> funcionarios;// = new ArrayList <Funcionario>();
 	
 	static{
 		funcionarios = (ArrayList <Funcionario>)Persist.recuperar("funcionarios.dat");
 		if(funcionarios==null) {
 			funcionarios = new ArrayList <Funcionario>();
 		}
+	}
+	
+	public static ArrayList <Funcionario> retornaLista(){
+		return funcionarios;
 	}
 	
 	public static void cadastrar (Funcionario f) {

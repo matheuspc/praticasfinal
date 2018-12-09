@@ -48,8 +48,21 @@ public class Principal {
 		//p.lerDados();
 		//p.mostrarDados();
 		
-		DadosAlunoGraduacao.listar();
+		//DadosAlunoGraduacao.listar();
 		
+		Tecnicos t = new Tecnicos();
+		FolhaPagamento fp = new FolhaPagamento();
+		
+		fp.getTotalFolha();
+		
+		t.getNomePessoa();
+		//fp.getClass();
+		t.getSalarioFunc();
+		fp.calcINSS(t);
+		fp.calcIRRF(t);
+		double salario = t.getSalarioFunc() - fp.calcINSS(t) - fp.calcIRRF(t);
+		
+		//System.out.println(fp.getClass().getName());
 	} 
 		
 }

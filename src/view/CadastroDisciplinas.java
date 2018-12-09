@@ -6,6 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import DAO.DadosDisciplina;
+import model.Disciplina;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -16,10 +20,10 @@ import java.awt.event.ActionEvent;
 public class CadastroDisciplinas extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField nomeDisciplina;
+	private JTextField codigoDisciplina;
+	private JTextField cargaDisciplina;
+	private JTextField professorDisciplina;
 
 	/**
 	 * Launch the application.
@@ -41,6 +45,7 @@ public class CadastroDisciplinas extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroDisciplinas() {
+		setTitle("GSchool v1.0 - Cadastro Disciplinas");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 272, 293);
@@ -60,34 +65,50 @@ public class CadastroDisciplinas extends JFrame {
 		lblNomeDaDisciplina.setBounds(10, 11, 126, 22);
 		panel.add(lblNomeDaDisciplina);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(10, 30, 219, 20);
-		panel.add(textField);
+		nomeDisciplina = new JTextField();
+		nomeDisciplina.setColumns(10);
+		nomeDisciplina.setBounds(10, 30, 219, 20);
+		panel.add(nomeDisciplina);
 		
 		JLabel lblCdigoDaDisciplina = new JLabel("C\u00F3digo da Disciplina");
 		lblCdigoDaDisciplina.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblCdigoDaDisciplina.setBounds(10, 61, 126, 22);
 		panel.add(lblCdigoDaDisciplina);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(10, 81, 219, 20);
-		panel.add(textField_1);
+		codigoDisciplina = new JTextField();
+		codigoDisciplina.setColumns(10);
+		codigoDisciplina.setBounds(10, 81, 219, 20);
+		panel.add(codigoDisciplina);
 		
 		JLabel lblCargaHorria = new JLabel("Carga Hor\u00E1ria");
 		lblCargaHorria.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblCargaHorria.setBounds(10, 145, 86, 42);
 		panel.add(lblCargaHorria);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(10, 177, 65, 20);
-		panel.add(textField_2);
+		cargaDisciplina = new JTextField();
+		cargaDisciplina.setColumns(10);
+		cargaDisciplina.setBounds(10, 177, 65, 20);
+		panel.add(cargaDisciplina);
 		
 		JButton button = new JButton("Cadastrar");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				Disciplina d = new Disciplina();
+				
+				d.setNomeDisciplina(nomeDisciplina.getText());
+				d.setCodigoDisciplina(codigoDisciplina.getText());
+				
+				int cargaHoraria = Integer.parseInt(cargaDisciplina.getText());
+				d.setCargaHoraria(cargaHoraria);
+				
+				DadosDisciplina.cadastrar(d);
+				DadosDisciplina.listar();
+				
+				nomeDisciplina.setText("");
+				codigoDisciplina.setText("");
+				cargaDisciplina.setText("");
+				professorDisciplina.setText("");
 			}
 		});
 		button.setBounds(68, 213, 109, 23);
@@ -98,10 +119,10 @@ public class CadastroDisciplinas extends JFrame {
 		lblProfessor.setBounds(10, 112, 109, 22);
 		panel.add(lblProfessor);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(10, 133, 109, 20);
-		panel.add(textField_3);
+		professorDisciplina = new JTextField();
+		professorDisciplina.setColumns(10);
+		professorDisciplina.setBounds(10, 133, 109, 20);
+		panel.add(professorDisciplina);
 	}
 
 }

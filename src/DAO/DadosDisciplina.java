@@ -6,16 +6,31 @@ import Persistencia.Persist;
 import java.io.*;
 
 import model.Disciplina;
+import model.Professor;
 
 public abstract class DadosDisciplina implements Serializable {
 
-	private static ArrayList <Disciplina> disciplinas = new ArrayList <Disciplina>();
+	private static ArrayList <Disciplina> disciplinas;// = new ArrayList <Disciplina>();
 	
 	static {
 		disciplinas = (ArrayList <Disciplina>)Persist.recuperar("disciplinas.dat");
 		if(disciplinas==null) {
 			disciplinas = new ArrayList <Disciplina>();
 		}
+	}
+	
+	public static ArrayList <Disciplina> retornaLista(){
+		return disciplinas;
+	}
+	
+	public static void deletar (int i) {
+		disciplinas.remove(i);
+	}
+	
+	public static void alterar (int i, Disciplina d) {
+		//professores.get(i).setNomeCurso((cpg.getNomeCurso()));
+		//professores.get(i).setCodigoCurso(cpg.getCodigoCurso());
+		//professores.get(i).setDuracaoCurso(cpg.getDuracaoCurso());
 	}
 	
 	public static void cadastrar (Disciplina d) {

@@ -5,9 +5,25 @@ public class Professor extends Funcionario {
 	
 	private String titulacao;
 	private String areaPesquisa;
-	private int numeroHorasAula;
+	private double numeroHorasAula;
 	private double valorHoraAula;
 	
+	public double getNumeroHorasAula() {
+		return numeroHorasAula;
+	}
+
+	public void setNumeroHorasAula(double numeroHorasAula) {
+		this.numeroHorasAula = numeroHorasAula;
+	}
+
+	public double getValorHoraAula() {
+		return valorHoraAula;
+	}
+
+	public void setValorHoraAula(double valorHoraAula) {
+		this.valorHoraAula = valorHoraAula;
+	}
+
 	public String getTitulacao() {
 		return titulacao;
 	}

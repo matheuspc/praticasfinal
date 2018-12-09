@@ -6,15 +6,27 @@ public class Tecnicos extends Funcionario {
 	private String cargo;
 	private String departamento;
 	private double qtdHoraExtra;
-	private static double valorHoraExtra;
+	private double valorHoraExtra;
 	
-	public static double getValorHoraExtra() {
+	public double getQtdHoraExtra() {
+		return qtdHoraExtra;
+	}
+
+	public void setQtdHoraExtra(double qtdHoraExtra) {
+		this.qtdHoraExtra = qtdHoraExtra;
+	}
+
+	public void setValorHoraExtra(double valorHoraExtra) {
+		this.valorHoraExtra = valorHoraExtra;
+	}
+	
+	public double getValorHoraExtra() {
 		return valorHoraExtra;
 	}
 
-	public static void setValorHoraExtra(double valorHoraExtra) {
-		Tecnicos.valorHoraExtra = valorHoraExtra;
-	}
+	//public static void setValorHoraExtra(double valorHoraExtra) {
+		//Tecnicos.valorHoraExtra = valorHoraExtra;
+//	}
 
 	public String getCargo() {
 		return cargo;

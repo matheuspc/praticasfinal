@@ -2,6 +2,7 @@ package DAO;
 import java.util.*;
 
 import Persistencia.Persist;
+import model.AlunoGraduacao;
 import model.AlunoPosGraduacao;
 import java.io.Serializable;
 
@@ -15,6 +16,11 @@ public abstract class DadosAlunoPosGraduacao implements Serializable {
 			alunos = new ArrayList<AlunoPosGraduacao>();
 		}
 	}
+	
+	public static ArrayList<AlunoPosGraduacao> retornaLista() {
+        return alunos;
+    }
+
 	
 	public static void cadastrar (AlunoPosGraduacao a) {
 		alunos.add(a);
@@ -45,5 +51,19 @@ public abstract class DadosAlunoPosGraduacao implements Serializable {
 		}
 		return false;
 	}
-
+	
+	
+	public static void deletar (int i) {
+		alunos.remove(i);
+	}
+	
+	public static void alterar (int i, AlunoPosGraduacao ap) {
+		alunos.get(i).setNomePessoa(ap.getNomePessoa());
+		alunos.get(i).setCpf(ap.getCpfPessoa());
+		alunos.get(i).setMatriculaAluno(ap.getMatriculaAluno());
+		alunos.get(i).setGraduacao(ap.getGraduacao());
+		alunos.get(i).setAnoInicio(ap.getAnoInicio());
+		alunos.get(i).setAnoConclusao(ap.getAnoConclusao());
+	}
+	
 }
