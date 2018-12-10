@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class Disciplina implements Serializable {
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.nomeDisciplina;
+	}
+
 	private String codigoDisciplina;
 	private String nomeDisciplina;
 	private int cargaHoraria;

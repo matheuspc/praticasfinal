@@ -8,7 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import DAO.DadosCursoGraduacao;
+import DAO.DadosDisciplina;
 import model.CursoGraduacao;
+import model.Disciplina;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,8 +19,10 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class CadastroCursoGraduacao extends JFrame {
@@ -27,7 +31,6 @@ public class CadastroCursoGraduacao extends JFrame {
 	private JTextField nomeCursoGraduacao;
 	private JTextField codCursoGraduacao;
 	private JTextField duracaoCursosGraduacao;
-	private JTextField disciplinasCursoGraduacao;
 
 	/**
 	 * Launch the application.
@@ -70,7 +73,7 @@ public class CadastroCursoGraduacao extends JFrame {
 		
 		nomeCursoGraduacao = new JTextField();
 		nomeCursoGraduacao.setColumns(10);
-		nomeCursoGraduacao.setBounds(10, 30, 219, 20);
+		nomeCursoGraduacao.setBounds(10, 30, 232, 20);
 		panel.add(nomeCursoGraduacao);
 		
 		JLabel lblCdigoDoCurso = new JLabel("C\u00F3digo do Curso");
@@ -80,7 +83,7 @@ public class CadastroCursoGraduacao extends JFrame {
 		
 		codCursoGraduacao = new JTextField();
 		codCursoGraduacao.setColumns(10);
-		codCursoGraduacao.setBounds(10, 81, 219, 20);
+		codCursoGraduacao.setBounds(10, 81, 232, 20);
 		panel.add(codCursoGraduacao);
 		
 		JLabel duracaoCursoGraduacao = new JLabel("Dura\u00E7\u00E3o");
@@ -93,6 +96,17 @@ public class CadastroCursoGraduacao extends JFrame {
 		duracaoCursosGraduacao.setBounds(10, 177, 65, 20);
 		panel.add(duracaoCursosGraduacao);
 		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(10, 133, 232, 20);
+		panel.add(comboBox);
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {}));
+		
+		ArrayList<Disciplina> disciplinas = DadosDisciplina.retornaLista();
+		for(int i=0; i<disciplinas.size();i++) {
+			Disciplina disciplina = disciplinas.get(i);
+			comboBox.addItem(disciplina);
+		}
+		
 		JButton button = new JButton("Cadastrar");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -102,6 +116,9 @@ public class CadastroCursoGraduacao extends JFrame {
 				cg.setNomeCurso(nomeCursoGraduacao.getText());
 				cg.setCodigoCurso(codCursoGraduacao.getText());
 				cg.setDuracaoCurso(duracaoCursosGraduacao.getText());
+				
+				Disciplina disc = (Disciplina) comboBox.getSelectedItem();
+				cg.setD(disc);
 				
 				DadosCursoGraduacao.cadastrar(cg);
 				DadosCursoGraduacao.listar();
@@ -120,11 +137,7 @@ public class CadastroCursoGraduacao extends JFrame {
 		JLabel lblDisciplinas = new JLabel("Disciplinas");
 		lblDisciplinas.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblDisciplinas.setBounds(10, 112, 109, 22);
-		panel.add(lblDisciplinas);
-		
-		disciplinasCursoGraduacao = new JTextField();
-		disciplinasCursoGraduacao.setColumns(10);
-		disciplinasCursoGraduacao.setBounds(10, 133, 109, 20);
-		panel.add(disciplinasCursoGraduacao);
+		panel.add(lblDisciplinas);		
+
 	}
 }
