@@ -21,6 +21,8 @@ import model.*;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.Canvas;
+import javax.swing.ImageIcon;
+import java.awt.Font;
 
 public class Principal extends JFrame {
 
@@ -46,10 +48,11 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Home");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\matheus.cardoso\\eclipse-workspace\\ProjectPoo1\\src\\iconMain.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 860, 530);
+		setBounds(100, 100, 982, 636);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -243,9 +246,23 @@ public class Principal extends JFrame {
 		});
 		mnFinanceiro.add(mntmFolhaDePagamento);
 		contentPane = new JPanel();
-		contentPane.setBackground(SystemColor.activeCaption);
+		contentPane.setBackground(SystemColor.inactiveCaptionBorder);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\matheus.cardoso\\eclipse-workspace\\Versao Final poo1\\praticasfinal\\favicon-proesc.png"));
+		lblNewLabel.setBounds(212, 82, 687, 448);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblGschoolGerenciador = new JLabel("GSchool - Gerenciador Escolar");
+		lblGschoolGerenciador.setFont(new Font("Nirmala UI", Font.BOLD, 32));
+		lblGschoolGerenciador.setBounds(254, 11, 463, 79);
+		contentPane.add(lblGschoolGerenciador);
+		
+		JLabel lblmatheusCardoso = new JLabel("@Matheus Cardoso 2018");
+		lblmatheusCardoso.setBounds(793, 550, 173, 14);
+		contentPane.add(lblmatheusCardoso);
 	}
 }

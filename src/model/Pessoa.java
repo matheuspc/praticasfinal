@@ -1,9 +1,10 @@
 package model;
+import java.io.Serializable;
 import java.util.*;
 
 import main.ValidaCPF;
 
-public abstract class Pessoa implements Pesquisador {
+public abstract class Pessoa implements Pesquisador, Serializable {
 	
 	private String nomePessoa;
 	private String cpfPessoa;

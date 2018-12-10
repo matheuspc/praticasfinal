@@ -1,7 +1,8 @@
 package model;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Aluno extends Pessoa implements Pesquisador {
+public abstract class Aluno extends Pessoa implements Pesquisador, Serializable {
 	
 	private String matriculaAluno;
 	private String situacao;

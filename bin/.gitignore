@@ -1,4 +1,5 @@
-/view/
-/model/
 /DAO/
+/Persistencia/
 /main/
+/model/
+/view/

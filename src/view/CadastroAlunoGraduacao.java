@@ -22,6 +22,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class CadastroAlunoGraduacao extends JFrame {
 
@@ -53,6 +55,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroAlunoGraduacao() {
+
 		setTitle("GSchool v1.0 - Cadastro Aluno Gradua\u00E7\u00E3o");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 335, 361);
@@ -117,9 +120,16 @@ public class CadastroAlunoGraduacao extends JFrame {
 		contentPane.add(cursoAlunoGraduacao);
 		
 		JComboBox cursoBox = new JComboBox();
-		cursoBox.setModel(new DefaultComboBoxModel(new String[] {"<Object>"}));
+		cursoBox.setModel(new DefaultComboBoxModel(new String[] {""}));
 		cursoBox.setBounds(10, 245, 299, 20);
 		contentPane.add(cursoBox);
+
+		ArrayList<CursoGraduacao> cursos = DadosCursoGraduacao.retornaLista();
+        for(int i=0; i<cursos.size();i++) {
+        	CursoGraduacao cursoGraduacao = cursos.get(i);
+        	//cursoGraduacao.getNomeCurso();
+        	cursoBox.addItem(cursoGraduacao.getNomeCurso());
+        }
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.addActionListener(new ActionListener() {

@@ -1,7 +1,8 @@
 package model;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Disciplina {
+public class Disciplina implements Serializable {
 	
 	private String codigoDisciplina;
 	private String nomeDisciplina;

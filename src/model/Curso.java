@@ -1,8 +1,9 @@
 package model;
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.*;
 
-public abstract class Curso {
+public abstract class Curso implements Serializable {
 	
 	private String codigoCurso;
 	private String nomeCurso;
