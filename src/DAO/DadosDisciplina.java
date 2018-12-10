@@ -28,9 +28,9 @@ public abstract class DadosDisciplina implements Serializable {
 	}
 	
 	public static void alterar (int i, Disciplina d) {
-		//professores.get(i).setNomeCurso((cpg.getNomeCurso()));
-		//professores.get(i).setCodigoCurso(cpg.getCodigoCurso());
-		//professores.get(i).setDuracaoCurso(cpg.getDuracaoCurso());
+		disciplinas.get(i).setNomeDisciplina(d.getNomeDisciplina());
+		disciplinas.get(i).setCodigoDisciplina(d.getCodigoDisciplina());
+		disciplinas.get(i).setCargaHoraria(d.getCargaHoraria());
 	}
 	
 	public static void cadastrar (Disciplina d) {

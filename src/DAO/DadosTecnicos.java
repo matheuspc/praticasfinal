@@ -26,9 +26,16 @@ public abstract class DadosTecnicos implements Serializable{
 	}
 	
 	public static void alterar (int i, Tecnicos t) {
-		//professores.get(i).setNomeCurso((cpg.getNomeCurso()));
-		//professores.get(i).setCodigoCurso(cpg.getCodigoCurso());
-		//professores.get(i).setDuracaoCurso(cpg.getDuracaoCurso());
+		tecnicos.get(i).setNomePessoa(t.getNomePessoa());
+		tecnicos.get(i).setCargo(t.getCargo());
+		tecnicos.get(i).setDepartamento(t.getDepartamento());
+		tecnicos.get(i).setQtdHoraExtra(t.getQtdHoraExtra());
+		tecnicos.get(i).setValorHoraExtra(t.getValorHoraExtra());
+		tecnicos.get(i).setEnderecoFunc(t.getEnderecoFunc());
+		tecnicos.get(i).setTelefoneFunc(t.getTelefoneFunc());
+		tecnicos.get(i).setSalarioFunc(t.getSalarioFunc());
+		tecnicos.get(i).setCpf(t.getCpfPessoa());
+		tecnicos.get(i).setCtpsFunc(t.getCtpsFunc());
 	}
 	
 	public static void cadastrar (Tecnicos t) {

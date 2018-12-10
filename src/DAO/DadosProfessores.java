@@ -33,9 +33,17 @@ public abstract class DadosProfessores implements Serializable {
 	}
 	
 	public static void alterar (int i, Professor p) {
-		//professores.get(i).setNomeCurso((cpg.getNomeCurso()));
-		//professores.get(i).setCodigoCurso(cpg.getCodigoCurso());
-		//professores.get(i).setDuracaoCurso(cpg.getDuracaoCurso());
+		professores.get(i).setNomePessoa(p.getNomePessoa());
+		professores.get(i).setAreaPesquisa(p.getAreaPesquisa());
+		professores.get(i).setTitulacao(p.getTitulacao());
+		professores.get(i).setNumeroHorasAula(p.getNumeroHorasAula());
+		professores.get(i).setValorHoraAula(p.getValorHoraAula());
+		professores.get(i).setEnderecoFunc(p.getEnderecoFunc());
+		professores.get(i).setTelefoneFunc(p.getTelefoneFunc());
+		professores.get(i).setSalarioFunc(p.getSalarioFunc());
+		professores.get(i).setCpf(p.getCpfPessoa());
+		professores.get(i).setCtpsFunc(p.getCtpsFunc());
+		
 	}
 	
 	
