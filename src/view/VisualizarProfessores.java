@@ -45,15 +45,16 @@ public class VisualizarProfessores extends JFrame {
 	 * Create the frame.
 	 */
 	public VisualizarProfessores() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 824, 388);
+		setBounds(100, 100, 860, 463);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(20, 11, 767, 294);
+		scrollPane.setBounds(10, 11, 834, 378);
 		contentPane.add(scrollPane);
 		
 		tabelaProfessor = new JTable();
@@ -72,7 +73,7 @@ public class VisualizarProfessores extends JFrame {
 				
 			}
 		});
-		btnExcluirProfessor.setBounds(299, 316, 89, 23);
+		btnExcluirProfessor.setBounds(317, 400, 89, 23);
 		contentPane.add(btnExcluirProfessor);
 		
 		btnEditarProfessor = new JButton("Editar");
@@ -84,35 +85,35 @@ public class VisualizarProfessores extends JFrame {
 				String nome = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 0);
 				p.setNomePessoa(nome);
 				
-				String area = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 1);
-				p.setAreaPesquisa(area);
-				
-				String titulacao = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 2);
+				String titulacao = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 1);
 				p.setTitulacao(titulacao);
 				
-				String qtdHoras = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 3);
-				double quantidade = Double.parseDouble(qtdHoras);
-				p.setNumeroHorasAula(quantidade);
+				String area = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 2);
+				p.setAreaPesquisa(area);	
 				
-				String valorHoras = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 4);
-				double valor = Double.parseDouble(valorHoras);
-				p.setValorHoraAula(valor);
-				
-				String endereco = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 5);
+				String endereco = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 3);
 				p.setEnderecoFunc(endereco);
 				
-				String telefone = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 6);
+				String telefone = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 4);
 				p.setTelefoneFunc(telefone);
+				
+				String cpf = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 5);
+				p.setCpf(cpf);
+				
+				String ctps = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 6);
+				p.setCtpsFunc(ctps);
 				
 				String salarioFunc = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 7);
 				double salario = Double.parseDouble(salarioFunc);
 				p.setSalarioFunc(salario);
+								
+				String qtdHoras = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 8);
+				double quantidade = Double.parseDouble(qtdHoras);
+				p.setNumeroHorasAula(quantidade);
 				
-				String cpf = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 8);
-				p.setCpf(cpf);
-				
-				String ctps = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 0);
-				p.setCtpsFunc(ctps);
+				String valorHoras = (String)tabelaProfessor.getValueAt(tabelaProfessor.getSelectedRow(), 9);
+				double valor = Double.parseDouble(valorHoras);
+				p.setValorHoraAula(valor);
 				
 				DadosProfessores.alterar(tabelaProfessor.getSelectedRow(), p);
 				
@@ -122,7 +123,7 @@ public class VisualizarProfessores extends JFrame {
 				
 			}
 		});
-		btnEditarProfessor.setBounds(423, 316, 89, 23);
+		btnEditarProfessor.setBounds(416, 400, 89, 23);
 		contentPane.add(btnEditarProfessor);
 	}
 	

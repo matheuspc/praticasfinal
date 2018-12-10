@@ -13,10 +13,27 @@ public class Disciplina implements Serializable {
 	private String codigoDisciplina;
 	private String nomeDisciplina;
 	private int cargaHoraria;
-	//Curso curso;
+	CursoGraduacao cg;
+	
+	public CursoGraduacao getCg() {
+		return cg;
+	}
+
+	public void setCg(CursoGraduacao cg) {
+		this.cg = cg;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
 	Professor professor;
 	
-	Disciplina (Curso curso){
+	Disciplina (CursoGraduacao curso, Professor p){
 		
 	}
 	

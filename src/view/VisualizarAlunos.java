@@ -43,16 +43,17 @@ public class VisualizarAlunos extends JFrame {
 	 * Create the frame.
 	 */
 	public VisualizarAlunos() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Consultar Alunos Gradua\u00E7\u00E3o");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 703, 356);
+		setBounds(100, 100, 811, 463);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 667, 254);
+		scrollPane.setBounds(10, 11, 785, 378);
 		contentPane.add(scrollPane);
 		
 		tabelaAlunos = new JTable();
@@ -71,7 +72,7 @@ public class VisualizarAlunos extends JFrame {
 				
 			}
 		});
-		btnExcluirAluno.setBounds(229, 276, 89, 23);
+		btnExcluirAluno.setBounds(312, 400, 89, 23);
 		contentPane.add(btnExcluirAluno);
 		
 		btnEditarAluno = new JButton("Editar");
@@ -100,7 +101,7 @@ public class VisualizarAlunos extends JFrame {
 				
 			}
 		});
-		btnEditarAluno.setBounds(350, 276, 89, 23);
+		btnEditarAluno.setBounds(410, 400, 89, 23);
 		contentPane.add(btnEditarAluno);
 	}
 	

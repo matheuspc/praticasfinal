@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
@@ -51,6 +53,7 @@ public class CadastroAlunoPos extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroAlunoPos() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Cadastro Aluno P\u00F3s");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 391, 384);
@@ -193,6 +196,8 @@ public class CadastroAlunoPos extends JFrame {
 				graduacaoAlunoPos.setText("");
 				dtInicioPos.setText("");
 				dtConclusaoPos.setText("");
+				
+				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
 				
 			}
 		});

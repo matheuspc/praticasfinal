@@ -23,6 +23,7 @@ import java.awt.SystemColor;
 import java.awt.Canvas;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Frame;
 
 public class Principal extends JFrame {
 
@@ -37,6 +38,8 @@ public class Principal extends JFrame {
 				try {
 					Principal frame = new Principal();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+					frame.setExtendedState(Frame.MAXIMIZED_BOTH);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -47,12 +50,12 @@ public class Principal extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Principal() {
+	public Principal() {		
 		setResizable(false);
 		setTitle("GSchool v1.0 - Home");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\matheus.cardoso\\eclipse-workspace\\ProjectPoo1\\src\\iconMain.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/view/favicon-proesc.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 982, 636);
+		setBounds(100, 100, 999, 700);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -68,6 +71,7 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				CadastroAlunoGraduacao cagr = new CadastroAlunoGraduacao();
 				cagr.setVisible(true);
+				cagr.setLocationRelativeTo(null);
 			}
 		});
 		mnNewMenu.add(mntmGraduao);
@@ -77,9 +81,8 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				CadastroAlunoPos cap = new CadastroAlunoPos();
 				cap.setVisible(true);
-				
-				
-			}
+				cap.setLocationRelativeTo(null);		
+				}
 		});
 		mnNewMenu.add(mntmPsGraduao);
 		
@@ -92,7 +95,7 @@ public class Principal extends JFrame {
 				
 				CadastroProfessor cp = new CadastroProfessor();
 				cp.setVisible(true);
-				
+				cp.setLocationRelativeTo(null);				
 			}
 		});
 		mnFuncionrio.add(mntmProfessor);
@@ -103,6 +106,7 @@ public class Principal extends JFrame {
 			
 				CadastroTecnico ct = new CadastroTecnico();
 				ct.setVisible(true);
+				ct.setLocationRelativeTo(null);
 			}
 		});
 		mnFuncionrio.add(mntmTcnico);
@@ -116,7 +120,7 @@ public class Principal extends JFrame {
 			
 				CadastroCursoGraduacao ccg = new CadastroCursoGraduacao();
 				ccg.setVisible(true);
-				
+				ccg.setLocationRelativeTo(null);				
 			}
 		});
 		mnCursos.add(mntmGraduao_1);
@@ -127,7 +131,7 @@ public class Principal extends JFrame {
 			
 				CadastroCursoPos ccp = new CadastroCursoPos();
 				ccp.setVisible(true);
-			
+				ccp.setLocationRelativeTo(null);
 			}
 		});
 		mnCursos.add(mntmPsGraduao_1);
@@ -138,7 +142,7 @@ public class Principal extends JFrame {
 			
 				CadastroDisciplinas cd = new CadastroDisciplinas();
 				cd.setVisible(true);
-			
+				cd.setLocationRelativeTo(null);
 			}
 		});
 		mnCadastros.add(mntmDisciplinas);
@@ -159,7 +163,7 @@ public class Principal extends JFrame {
 			
 				VisualizarAlunosPos vap = new VisualizarAlunosPos();
 				vap.setVisible(true);
-			
+				vap.setLocationRelativeTo(null);
 			}
 		});
 		mntmAlunos.addActionListener(new ActionListener() {
@@ -167,7 +171,7 @@ public class Principal extends JFrame {
 			
 				VisualizarAlunos va = new VisualizarAlunos();
 				va.setVisible(true);
-				
+				va.setLocationRelativeTo(null);
 			}
 		});
 		
@@ -180,7 +184,7 @@ public class Principal extends JFrame {
 			
 				VisualizarProfessores vp = new VisualizarProfessores();
 				vp.setVisible(true);
-			
+				vp.setLocationRelativeTo(null);
 			}
 		});
 		mnFuncoinrios.add(mntmProfessor_1);
@@ -191,7 +195,7 @@ public class Principal extends JFrame {
 				
 				VisualizarTecnicos vt = new VisualizarTecnicos();
 				vt.setVisible(true);
-				
+				vt.setLocationRelativeTo(null);
 			}
 		});
 		mnFuncoinrios.add(mntmTcnicos);
@@ -205,7 +209,7 @@ public class Principal extends JFrame {
 			
 			VisualizarCursosGraduacao vcg = new VisualizarCursosGraduacao();
 			vcg.setVisible(true);
-			
+			vcg.setLocationRelativeTo(null);
 			}
 		});
 		mnCursos_1.add(mntmGraduao_2);
@@ -216,7 +220,7 @@ public class Principal extends JFrame {
 			
 				VisualizarCursosPos vcp = new VisualizarCursosPos();
 				vcp.setVisible(true);
-				
+				vcp.setLocationRelativeTo(null);
 			}
 		});
 		mnCursos_1.add(mntmPsGraduao_2);
@@ -227,7 +231,7 @@ public class Principal extends JFrame {
 			
 				VisualizarDisciplinas vd = new VisualizarDisciplinas();
 				vd.setVisible(true);
-			
+				vd.setLocationRelativeTo(null);
 			}
 		});
 		mnVisualizar.add(mntmDisciplinas_1);
@@ -241,7 +245,7 @@ public class Principal extends JFrame {
 				
 				FinanceiroFolhaPagamento ffp = new FinanceiroFolhaPagamento();
 				ffp.setVisible(true);
-				
+				ffp.setLocationRelativeTo(null);
 			}
 		});
 		mnFinanceiro.add(mntmFolhaDePagamento);
@@ -252,17 +256,18 @@ public class Principal extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Matheus\\Desktop\\Vers\u00E3o Final - Poo1\\praticasfinal\\src\\favicon-proesc.png"));
-		lblNewLabel.setBounds(247, 80, 687, 448);
+		lblNewLabel.setIcon(new ImageIcon(Principal.class.getResource("/view/favicon-proesc.png")));
+		lblNewLabel.setBounds(438, 78, 491, 448);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblGschoolGerenciador = new JLabel("GSchool - Gerenciador Escolar");
 		lblGschoolGerenciador.setFont(new Font("Nirmala UI", Font.BOLD, 32));
-		lblGschoolGerenciador.setBounds(254, 11, 463, 79);
+		lblGschoolGerenciador.setBounds(438, 11, 463, 79);
 		contentPane.add(lblGschoolGerenciador);
 		
 		JLabel lblmatheusCardoso = new JLabel("@Matheus Cardoso 2018");
-		lblmatheusCardoso.setBounds(793, 550, 173, 14);
+		lblmatheusCardoso.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblmatheusCardoso.setBounds(707, 636, 276, 14);
 		contentPane.add(lblmatheusCardoso);
 	}
 }

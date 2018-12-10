@@ -6,6 +6,24 @@ import main.ValidaCPF;
 
 public abstract class Pessoa implements Pesquisador, Serializable {
 	
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getTipo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.getNomePessoa();
+	}
+
 	private String nomePessoa;
 	private String cpfPessoa;
 	

@@ -47,16 +47,17 @@ public class VisualizarDisciplinas extends JFrame {
 	 * Create the frame.
 	 */
 	public VisualizarDisciplinas() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Consulta Disciplinas");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 703, 356);
+		setBounds(100, 100, 811, 463);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 667, 254);
+		scrollPane.setBounds(10, 11, 785, 378);
 		contentPane.add(scrollPane);
 		
 		tabelaDisciplinas = new JTable();
@@ -75,7 +76,7 @@ public class VisualizarDisciplinas extends JFrame {
 				
 			}
 		});
-		btnExcluirDisciplina.setBounds(229, 276, 89, 23);
+		btnExcluirDisciplina.setBounds(301, 400, 89, 23);
 		contentPane.add(btnExcluirDisciplina);
 		
 		btnEditarDisciplina = new JButton("Editar");
@@ -102,13 +103,13 @@ public class VisualizarDisciplinas extends JFrame {
 				
 			}
 		});
-		btnEditarDisciplina.setBounds(350, 276, 89, 23);
+		btnEditarDisciplina.setBounds(416, 400, 89, 23);
 		contentPane.add(btnEditarDisciplina);
 	}
 	
     public static void mostrarDadosTabela(JTable tabela){
         //1a. parte - definir modelo de dados
-        String[] colunas = new String []{"Nome", "Código", "Professor", "Carga Horária"};  
+        String[] colunas = new String []{"Nome", "Código", "Carga Horária", "Professor", "Curso"};  
         String[][] dados = new String[0][0];
         DefaultTableModel modelo = new DefaultTableModel(dados, colunas);  
 
@@ -118,8 +119,8 @@ public class VisualizarDisciplinas extends JFrame {
         //3a. parte - adicionar linhas na tabela
         ArrayList<Disciplina> lista = DadosDisciplina.retornaLista();
         for (Disciplina d : DadosDisciplina.retornaLista()){
-        	String codigoDisciplina = String.valueOf(d.getCargaHoraria());
-            modelo.addRow(new String [] {d.getNomeDisciplina(), d.getCodigoDisciplina(), "Fabiano Dorça", codigoDisciplina});
+        	String duracao = String.valueOf(d.getCargaHoraria());
+            modelo.addRow(new String [] {d.getNomeDisciplina(), d.getCodigoDisciplina(), duracao, d.getProfessor().getNomePessoa(), d.getCg().getNomeCurso()});
 
         }
     }

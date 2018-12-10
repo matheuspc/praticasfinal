@@ -12,6 +12,8 @@ import DAO.DadosProfessores;
 import model.Professor;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -52,6 +54,7 @@ public class CadastroProfessor extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroProfessor() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Cadastro Professor");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 545, 377);
@@ -161,6 +164,8 @@ public class CadastroProfessor extends JFrame {
 				salarioProfessor.setText("");
 				cpfProfessor.setText("");
 				ctpsProfessor.setText("");
+				
+				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
 			}
 		});
 		button.setBounds(143, 302, 238, 23);

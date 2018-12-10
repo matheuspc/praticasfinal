@@ -52,9 +52,10 @@ public class CadastroCursoGraduacao extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroCursoGraduacao() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Cadastro Curso Gradua\u00E7\u00E3o");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 272, 293);
+		setBounds(100, 100, 272, 230);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -63,7 +64,7 @@ public class CadastroCursoGraduacao extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
-		panel.setBounds(0, 0, 252, 247);
+		panel.setBounds(0, 0, 252, 191);
 		contentPane.add(panel);
 		
 		JLabel lblNomeDoCurso = new JLabel("Nome do Curso");
@@ -88,25 +89,14 @@ public class CadastroCursoGraduacao extends JFrame {
 		
 		JLabel duracaoCursoGraduacao = new JLabel("Dura\u00E7\u00E3o");
 		duracaoCursoGraduacao.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		duracaoCursoGraduacao.setBounds(10, 145, 65, 42);
+		duracaoCursoGraduacao.setBounds(10, 94, 65, 42);
 		panel.add(duracaoCursoGraduacao);
 		
 		duracaoCursosGraduacao = new JTextField();
 		duracaoCursosGraduacao.setColumns(10);
-		duracaoCursosGraduacao.setBounds(10, 177, 65, 20);
+		duracaoCursosGraduacao.setBounds(10, 124, 65, 20);
 		panel.add(duracaoCursosGraduacao);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(10, 133, 232, 20);
-		panel.add(comboBox);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {}));
-		
-		ArrayList<Disciplina> disciplinas = DadosDisciplina.retornaLista();
-		for(int i=0; i<disciplinas.size();i++) {
-			Disciplina disciplina = disciplinas.get(i);
-			comboBox.addItem(disciplina);
-		}
-		
+	
 		JButton button = new JButton("Cadastrar");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -117,9 +107,6 @@ public class CadastroCursoGraduacao extends JFrame {
 				cg.setCodigoCurso(codCursoGraduacao.getText());
 				cg.setDuracaoCurso(duracaoCursosGraduacao.getText());
 				
-				Disciplina disc = (Disciplina) comboBox.getSelectedItem();
-				cg.setD(disc);
-				
 				DadosCursoGraduacao.cadastrar(cg);
 				DadosCursoGraduacao.listar();
 				
@@ -128,16 +115,11 @@ public class CadastroCursoGraduacao extends JFrame {
 				duracaoCursosGraduacao.setText("");
 				
 				
-				JOptionPane.showMessageDialog(null, "OK!");
+				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
 			}
 		});
-		button.setBounds(68, 213, 109, 23);
+		button.setBounds(69, 157, 109, 23);
 		panel.add(button);
-		
-		JLabel lblDisciplinas = new JLabel("Disciplinas");
-		lblDisciplinas.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblDisciplinas.setBounds(10, 112, 109, 22);
-		panel.add(lblDisciplinas);		
 
 	}
 }

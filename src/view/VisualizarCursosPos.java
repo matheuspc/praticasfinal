@@ -66,7 +66,7 @@ public class VisualizarCursosPos extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				if(tabelaCursosPos.getSelectedRow() > -1) {
-					DadosAlunoGraduacao.deletar(tabelaCursosPos.getSelectedRow());
+					DadosCursoPosGraduacao.deletar(tabelaCursosPos.getSelectedRow());
 					JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
 					mostrarDadosTabela(tabelaCursosPos);
 				}
@@ -105,7 +105,7 @@ public class VisualizarCursosPos extends JFrame {
 	
     public static void mostrarDadosTabela(JTable tabela){
         //1a. parte - definir modelo de dados
-        String[] colunas = new String []{"Nome", "Código Curso", "Duração", "Disciplinas"};  
+        String[] colunas = new String []{"Nome", "Código Curso", "Duração"};  
         String[][] dados = new String[0][0];
         DefaultTableModel modelo = new DefaultTableModel(dados, colunas);  
 
@@ -115,7 +115,7 @@ public class VisualizarCursosPos extends JFrame {
         //3a. parte - adicionar linhas na tabela
         ArrayList<CursoPosGraduacao> lista = DadosCursoPosGraduacao.retornaLista();
         for (CursoPosGraduacao cpg : DadosCursoPosGraduacao.retornaLista()){
-            modelo.addRow(new String [] {cpg.getNomeCurso(), cpg.getCodigoCurso(), cpg.getDuracaoCurso(), "POO1"});
+            modelo.addRow(new String [] {cpg.getNomeCurso(), cpg.getCodigoCurso(), cpg.getDuracaoCurso()});
 
         }
     }

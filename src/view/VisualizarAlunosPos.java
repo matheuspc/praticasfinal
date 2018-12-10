@@ -45,16 +45,17 @@ public class VisualizarAlunosPos extends JFrame {
 	 * Create the frame.
 	 */
 	public VisualizarAlunosPos() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Consulta Alunos P\u00F3s");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 703, 356);
+		setBounds(100, 100, 811, 463);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 667, 254);
+		scrollPane.setBounds(10, 11, 785, 378);
 		contentPane.add(scrollPane);
 		
 		tabelaAlunosPos = new JTable();
@@ -73,7 +74,7 @@ public class VisualizarAlunosPos extends JFrame {
 				
 			}
 		});
-		btnExcluirAluno.setBounds(229, 276, 89, 23);
+		btnExcluirAluno.setBounds(301, 400, 89, 23);
 		contentPane.add(btnExcluirAluno);
 		
 		btnEditarAlunoPos = new JButton("Editar");
@@ -112,13 +113,13 @@ public class VisualizarAlunosPos extends JFrame {
 				
 			}
 		});
-		btnEditarAlunoPos.setBounds(350, 276, 89, 23);
+		btnEditarAlunoPos.setBounds(425, 400, 89, 23);
 		contentPane.add(btnEditarAlunoPos);
 	}
 	
     public static void mostrarDadosTabela(JTable tabela){
         //1a. parte - definir modelo de dados
-        String[] colunas = new String []{"Nome", "CPF", "Matrícula", "Curso", "Cod Curso", "Duração", "Graduação", "Data de Início", "Data de Conclusão"};  
+        String[] colunas = new String []{"Nome", "CPF", "Matrícula", "Graduação", "Dt Início", "Dt Conclusão", "Curso", "Cod Curso", "Duração"};  
         String[][] dados = new String[0][0];
         DefaultTableModel modelo = new DefaultTableModel(dados, colunas);  
 
@@ -128,7 +129,7 @@ public class VisualizarAlunosPos extends JFrame {
         //3a. parte - adicionar linhas na tabela
         ArrayList<AlunoPosGraduacao> lista = DadosAlunoPosGraduacao.retornaLista();
         for (AlunoPosGraduacao a : DadosAlunoPosGraduacao.retornaLista()){
-            modelo.addRow(new String [] {a.getNomePessoa(), a.getCpfPessoa(), a.getMatriculaAluno(), a.getCursoPos().getNomeCurso(), a.getCursoPos().getCodigoCurso(), a.getCursoPos().getDuracaoCurso(), a.getGraduacao(), a.getAnoInicio(), a.getAnoConclusao()});
+            modelo.addRow(new String [] {a.getNomePessoa(), a.getCpfPessoa(), a.getMatriculaAluno(), a.getGraduacao(), a.getAnoInicio(), a.getAnoConclusao(), a.getCursoPos().getNomeCurso(), a.getCursoPos().getCodigoCurso(), a.getCursoPos().getDuracaoCurso()});
 
         }
     }

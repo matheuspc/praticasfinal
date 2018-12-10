@@ -47,16 +47,17 @@ public class VisualizarTecnicos extends JFrame {
 	 * Create the frame.
 	 */
 	public VisualizarTecnicos() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Consulta T\u00E9cnicos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 854, 345);
+		setBounds(100, 100, 860, 463);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 818, 254);
+		scrollPane.setBounds(10, 11, 834, 378);
 		contentPane.add(scrollPane);
 		
 		tabelaTecnicos = new JTable();
@@ -68,14 +69,14 @@ public class VisualizarTecnicos extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				if(tabelaTecnicos.getSelectedRow() > -1) {
-					DadosProfessores.deletar(tabelaTecnicos.getSelectedRow());
+					DadosTecnicos.deletar(tabelaTecnicos.getSelectedRow());
 					JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
 					mostrarDadosTabela(tabelaTecnicos);
 				}
 				
 			}
 		});
-		btnExcluirTecnico.setBounds(328, 276, 89, 23);
+		btnExcluirTecnico.setBounds(311, 400, 89, 23);
 		contentPane.add(btnExcluirTecnico);
 		
 		btnEditarTecnico = new JButton("Editar");
@@ -125,7 +126,7 @@ public class VisualizarTecnicos extends JFrame {
 				
 			}
 		});
-		btnEditarTecnico.setBounds(427, 276, 89, 23);
+		btnEditarTecnico.setBounds(447, 400, 89, 23);
 		contentPane.add(btnEditarTecnico);
 	}
 	

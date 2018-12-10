@@ -3,6 +3,24 @@ import java.util.Scanner;
 
 public abstract class Funcionario extends Pessoa{
 	
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getTipo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
 	private String enderecoFunc;
 	private String telefoneFunc;
 	private String ctpsFunc;

@@ -44,6 +44,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 				try {
 					CadastroAlunoGraduacao frame = new CadastroAlunoGraduacao();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -55,6 +56,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroAlunoGraduacao() {
+		setResizable(false);
 
 		setTitle("GSchool v1.0 - Cadastro Aluno Gradua\u00E7\u00E3o");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -154,27 +156,16 @@ public class CadastroAlunoGraduacao extends JFrame {
 				CursoGraduacao cursoEscolhido = (CursoGraduacao) cursoBox.getSelectedItem();
 				ag.setCursoGraduacao(cursoEscolhido);
 				
-				//ag.setCursoGraduacao(cg);
 				DadosAlunoGraduacao.adicionar(ag);
 				
-				DadosAlunoGraduacao.listar();
-				
-				//System.out.println(DadosAlunoGraduacao.retorno());
-				
+				DadosAlunoGraduacao.listar();		
 				
 				nameAlunoG.setText("");
 				cpfAlunoG.setText("");
 				matriculaAlunoG.setText("");
-				//buttonGroup.setSelected(null, b);
+
+				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
 				
-				
-			//	AlunoGraduacao alunim = DadosAlunoGraduacao.buscar(ag.getMatriculaAluno());
-				
-				//for (A)
-				
-				//System.out.println(alunim.getNomePessoa());
-				
-				//JOptionPane.showMessageDialog(null, "Cadastro efetuado com sucesso!");
 			}
 		});
 		btnCadastrar.setBounds(108, 288, 109, 23);

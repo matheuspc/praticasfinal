@@ -52,17 +52,18 @@ public class FinanceiroFolhaPagamento extends JFrame {
 	 * Create the frame.
 	 */
 	public FinanceiroFolhaPagamento() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Folha de Pagamento");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 703, 356);
+		setBounds(100, 100, 811, 463);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 46, 667, 260);
+		scrollPane.setBounds(10, 46, 775, 367);
 		contentPane.add(scrollPane);
 		
 		tabelaFinanceiro = new JTable();

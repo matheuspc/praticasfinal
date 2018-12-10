@@ -11,6 +11,8 @@ import DAO.DadosCursoPosGraduacao;
 import model.CursoPosGraduacao;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -23,7 +25,6 @@ public class CadastroCursoPos extends JFrame {
 	private JTextField nomeCursoPos;
 	private JTextField codigoCursoPos;
 	private JTextField duracaoCursoPos;
-	private JTextField disciplinasCursoPos;
 
 	/**
 	 * Launch the application.
@@ -45,9 +46,10 @@ public class CadastroCursoPos extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroCursoPos() {
+		setResizable(false);
 		setTitle("GSchool v1.0 - Cadastro Curso P\u00F3s");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 272, 293);
+		setBounds(100, 100, 272, 220);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -56,7 +58,7 @@ public class CadastroCursoPos extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
-		panel.setBounds(0, 0, 252, 247);
+		panel.setBounds(0, 0, 252, 187);
 		contentPane.add(panel);
 		
 		JLabel label = new JLabel("Nome do Curso");
@@ -81,12 +83,12 @@ public class CadastroCursoPos extends JFrame {
 		
 		JLabel labelDuracao = new JLabel("Dura\u00E7\u00E3o");
 		labelDuracao.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		labelDuracao.setBounds(10, 145, 65, 42);
+		labelDuracao.setBounds(10, 94, 65, 42);
 		panel.add(labelDuracao);
 		
 		duracaoCursoPos = new JTextField();
 		duracaoCursoPos.setColumns(10);
-		duracaoCursoPos.setBounds(10, 177, 65, 20);
+		duracaoCursoPos.setBounds(10, 125, 65, 20);
 		panel.add(duracaoCursoPos);
 		
 		JButton button = new JButton("Cadastrar");
@@ -106,20 +108,12 @@ public class CadastroCursoPos extends JFrame {
 				codigoCursoPos.setText("");
 				duracaoCursoPos.setText("");
 				
+				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+				
 			}
 		});
-		button.setBounds(68, 213, 109, 23);
+		button.setBounds(68, 156, 109, 23);
 		panel.add(button);
-		
-		JLabel label_3 = new JLabel("Disciplinas");
-		label_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_3.setBounds(10, 112, 109, 22);
-		panel.add(label_3);
-		
-		disciplinasCursoPos = new JTextField();
-		disciplinasCursoPos.setColumns(10);
-		disciplinasCursoPos.setBounds(10, 133, 109, 20);
-		panel.add(disciplinasCursoPos);
 	}
 
 }
