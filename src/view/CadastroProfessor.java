@@ -150,7 +150,6 @@ public class CadastroProfessor extends JFrame {
 				p.setCtpsFunc(ctpsProfessor.getText());
 				
 				DadosProfessores.cadastrar(p);
-				//DadosProfessores.listar();
 				
 				DadosFuncionario.cadastrar(p);
 				

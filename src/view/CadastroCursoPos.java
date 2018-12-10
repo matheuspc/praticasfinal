@@ -102,7 +102,6 @@ public class CadastroCursoPos extends JFrame {
 				cpg.setDuracaoCurso(duracaoCursoPos.getText());
 				
 				DadosCursoPosGraduacao.cadastrar(cpg);
-				DadosCursoPosGraduacao.listar();
 				
 				nomeCursoPos.setText("");
 				codigoCursoPos.setText("");

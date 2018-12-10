@@ -149,8 +149,7 @@ public class CadastroTecnico extends JFrame {
 				t.setCpf(cpfTecnico.getText());
 				t.setCtpsFunc(ctpsTecnico.getText());
 				
-				DadosTecnicos.cadastrar(t);
-				//DadosTecnicos.listar();				
+				DadosTecnicos.cadastrar(t);		
 				
 				DadosFuncionario.cadastrar(t);
 				

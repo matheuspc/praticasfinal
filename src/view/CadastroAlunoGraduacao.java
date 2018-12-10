@@ -156,9 +156,7 @@ public class CadastroAlunoGraduacao extends JFrame {
 				CursoGraduacao cursoEscolhido = (CursoGraduacao) cursoBox.getSelectedItem();
 				ag.setCursoGraduacao(cursoEscolhido);
 				
-				DadosAlunoGraduacao.adicionar(ag);
-				
-				DadosAlunoGraduacao.listar();		
+				DadosAlunoGraduacao.adicionar(ag);	
 				
 				nameAlunoG.setText("");
 				cpfAlunoG.setText("");

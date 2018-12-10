@@ -101,8 +101,6 @@ public class FinanceiroFolhaPagamento extends JFrame {
 
         FolhaPagamento fp = new FolhaPagamento();
         
-//        fp.somaFolha(DadosFuncionario.retornaLista());
-        
         //3a. parte - adicionar linhas na tabela
         ArrayList<Funcionario> lista = DadosFuncionario.retornaLista();
         for (Funcionario f : DadosFuncionario.retornaLista()){

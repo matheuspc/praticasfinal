@@ -108,7 +108,6 @@ public class CadastroCursoGraduacao extends JFrame {
 				cg.setDuracaoCurso(duracaoCursosGraduacao.getText());
 				
 				DadosCursoGraduacao.cadastrar(cg);
-				DadosCursoGraduacao.listar();
 				
 				nomeCursoGraduacao.setText("");
 				codCursoGraduacao.setText("");

@@ -141,7 +141,6 @@ public class CadastroDisciplinas extends JFrame {
 				d.setProfessor(proff);
 				
 				DadosDisciplina.cadastrar(d);
-				DadosDisciplina.listar();
 				
 				nomeDisciplina.setText("");
 				codigoDisciplina.setText("");
