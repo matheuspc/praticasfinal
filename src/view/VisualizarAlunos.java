@@ -106,7 +106,7 @@ public class VisualizarAlunos extends JFrame {
 	
     public static void mostrarDadosTabela(JTable tabela){
         //1a. parte - definir modelo de dados
-        String[] colunas = new String []{"Nome", "CPF", "Matrícula", "Situação", "Curso"};  
+        String[] colunas = new String []{"Nome", "CPF", "Matrícula", "Situação", "Curso", "Cód Curso", "Duração"};  
         String[][] dados = new String[0][0];
         DefaultTableModel modelo = new DefaultTableModel(dados, colunas);  
 
@@ -116,7 +116,7 @@ public class VisualizarAlunos extends JFrame {
         //3a. parte - adicionar linhas na tabela
         ArrayList<AlunoGraduacao> lista = DadosAlunoGraduacao.retornaLista();
         for (AlunoGraduacao a : DadosAlunoGraduacao.retornaLista()){
-            modelo.addRow(new String [] {a.getNomePessoa(), a.getCpfPessoa(), a.getMatriculaAluno(), a.getSituacao(), "Sistemas"});
+            modelo.addRow(new String [] {a.getNomePessoa(), a.getCpfPessoa(), a.getMatriculaAluno(), a.getSituacao(), a.getCursoGraduacao().getNomeCurso(), a.getCursoGraduacao().getCodigoCurso(), a.getCursoGraduacao().getDuracaoCurso()});
 
         }
     }

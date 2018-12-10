@@ -15,8 +15,10 @@ import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
 
 public class CadastroAlunoPos extends JFrame {
 
@@ -57,73 +59,108 @@ public class CadastroAlunoPos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel view = new JPanel();
-		view.setLayout(null);
-		view.setBorder(new EmptyBorder(5, 5, 5, 5));
-		view.setBounds(0, 0, 375, 345);
-		contentPane.add(view);
-		
 		JLabel label = new JLabel("Nome");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		label.setBounds(10, 11, 65, 22);
-		view.add(label);
+		contentPane.add(label);
+		label.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		
 		nameAlunoPos = new JTextField();
+		nameAlunoPos.setBounds(10, 36, 355, 20);
+		contentPane.add(nameAlunoPos);
 		nameAlunoPos.setColumns(10);
-		nameAlunoPos.setBounds(10, 30, 355, 20);
-		view.add(nameAlunoPos);
 		
 		JLabel label_1 = new JLabel("CPF");
+		label_1.setBounds(10, 63, 65, 22);
+		contentPane.add(label_1);
 		label_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_1.setBounds(10, 49, 65, 22);
-		view.add(label_1);
 		
 		cpfAlunoPos = new JTextField();
+		cpfAlunoPos.setBounds(10, 87, 146, 20);
+		contentPane.add(cpfAlunoPos);
 		cpfAlunoPos.setColumns(10);
-		cpfAlunoPos.setBounds(10, 71, 146, 20);
-		view.add(cpfAlunoPos);
 		
 		JLabel label_2 = new JLabel("Matr\u00EDcula");
+		label_2.setBounds(10, 102, 65, 42);
+		contentPane.add(label_2);
 		label_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_2.setBounds(219, 39, 65, 42);
-		view.add(label_2);
 		
 		matriculaAlunoPos = new JTextField();
+		matriculaAlunoPos.setBounds(10, 134, 146, 20);
+		contentPane.add(matriculaAlunoPos);
 		matriculaAlunoPos.setColumns(10);
-		matriculaAlunoPos.setBounds(219, 71, 146, 20);
-		view.add(matriculaAlunoPos);
 		
 		JLabel label_3 = new JLabel("Situa\u00E7\u00E3o");
+		label_3.setBounds(197, 63, 146, 22);
+		contentPane.add(label_3);
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_3.setBounds(10, 102, 146, 22);
-		view.add(label_3);
 		
 		JRadioButton matriculado = new JRadioButton("Matriculado");
+		matriculado.setBounds(194, 86, 139, 23);
+		contentPane.add(matriculado);
 		buttonGroup.add(matriculado);
-		matriculado.setBounds(10, 131, 109, 23);
-		view.add(matriculado);
 		
 		JRadioButton desligado = new JRadioButton("Desligado");
+		desligado.setBounds(195, 107, 148, 23);
+		contentPane.add(desligado);
 		buttonGroup.add(desligado);
-		desligado.setBounds(121, 131, 109, 23);
-		view.add(desligado);
 		
 		JRadioButton trancado = new JRadioButton("Trancado");
+		trancado.setBounds(195, 128, 158, 23);
+		contentPane.add(trancado);
 		buttonGroup.add(trancado);
-		trancado.setBounds(232, 131, 109, 23);
-		view.add(trancado);
 		
 		JLabel label_4 = new JLabel("Selecione o curso");
+		label_4.setBounds(10, 172, 146, 22);
+		contentPane.add(label_4);
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_4.setBounds(10, 161, 146, 22);
-		view.add(label_4);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(146, 161, 219, 20);
-		view.add(comboBox);
+		JButton cadastrarPos = new JButton("Cadastrar");
+		cadastrarPos.setBounds(119, 311, 109, 23);
+		contentPane.add(cadastrarPos);
 		
-		JButton button = new JButton("Cadastrar");
-		button.addActionListener(new ActionListener() {
+		JLabel lblGraduao = new JLabel("Gradua\u00E7\u00E3o");
+		lblGraduao.setBounds(10, 200, 146, 22);
+		contentPane.add(lblGraduao);
+		lblGraduao.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		
+		graduacaoAlunoPos = new JTextField();
+		graduacaoAlunoPos.setBounds(10, 225, 355, 20);
+		contentPane.add(graduacaoAlunoPos);
+		graduacaoAlunoPos.setColumns(10);
+		
+		JLabel lblDataDeIncio = new JLabel("Data de In\u00EDcio");
+		lblDataDeIncio.setBounds(10, 251, 83, 22);
+		contentPane.add(lblDataDeIncio);
+		lblDataDeIncio.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		
+		JLabel lblDataDeConcluso = new JLabel("Data de Conclus\u00E3o");
+		lblDataDeConcluso.setBounds(219, 242, 109, 42);
+		contentPane.add(lblDataDeConcluso);
+		lblDataDeConcluso.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		
+		dtInicioPos = new JTextField();
+		dtInicioPos.setBounds(10, 270, 146, 20);
+		contentPane.add(dtInicioPos);
+		dtInicioPos.setColumns(10);
+		
+		dtConclusaoPos = new JTextField();
+		dtConclusaoPos.setBounds(219, 272, 146, 20);
+		contentPane.add(dtConclusaoPos);
+		dtConclusaoPos.setColumns(10);
+		
+		JComboBox cursoPosBox = new JComboBox();
+		cursoPosBox.setBounds(121, 174, 244, 20);
+		contentPane.add(cursoPosBox);
+		cursoPosBox.setModel(new DefaultComboBoxModel(new String[] {}));
+		
+		ArrayList<CursoPosGraduacao> cursos = DadosCursoPosGraduacao.retornaLista();
+        for(int i=0; i<cursos.size();i++) {
+        	CursoPosGraduacao cursoPos = cursos.get(i);
+        	cursoPosBox.addItem(cursoPos);
+        	
+        }
+		
+		cadastrarPos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				AlunoPosGraduacao ap = new AlunoPosGraduacao();
@@ -145,6 +182,9 @@ public class CadastroAlunoPos extends JFrame {
 					ap.setSituacao("Desligado");
 				}
 				
+				CursoPosGraduacao cursoEscolhido = (CursoPosGraduacao) cursoPosBox.getSelectedItem();
+				ap.setCursoPos(cursoEscolhido);
+				
 				DadosAlunoPosGraduacao.cadastrar(ap);
 				
 				nameAlunoPos.setText("");
@@ -156,37 +196,6 @@ public class CadastroAlunoPos extends JFrame {
 				
 			}
 		});
-		button.setBounds(131, 312, 109, 23);
-		view.add(button);
-		
-		JLabel lblGraduao = new JLabel("Gradua\u00E7\u00E3o");
-		lblGraduao.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblGraduao.setBounds(10, 194, 146, 22);
-		view.add(lblGraduao);
-		
-		graduacaoAlunoPos = new JTextField();
-		graduacaoAlunoPos.setColumns(10);
-		graduacaoAlunoPos.setBounds(10, 217, 355, 20);
-		view.add(graduacaoAlunoPos);
-		
-		JLabel lblDataDeIncio = new JLabel("Data de In\u00EDcio");
-		lblDataDeIncio.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblDataDeIncio.setBounds(10, 248, 83, 22);
-		view.add(lblDataDeIncio);
-		
-		JLabel lblDataDeConcluso = new JLabel("Data de Conclus\u00E3o");
-		lblDataDeConcluso.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblDataDeConcluso.setBounds(219, 238, 109, 42);
-		view.add(lblDataDeConcluso);
-		
-		dtInicioPos = new JTextField();
-		dtInicioPos.setBounds(10, 281, 146, 20);
-		view.add(dtInicioPos);
-		dtInicioPos.setColumns(10);
-		
-		dtConclusaoPos = new JTextField();
-		dtConclusaoPos.setColumns(10);
-		dtConclusaoPos.setBounds(219, 281, 146, 20);
-		view.add(dtConclusaoPos);
+
 	}
 }

@@ -120,15 +120,15 @@ public class CadastroAlunoGraduacao extends JFrame {
 		contentPane.add(cursoAlunoGraduacao);
 		
 		JComboBox cursoBox = new JComboBox();
-		cursoBox.setModel(new DefaultComboBoxModel(new String[] {""}));
+		cursoBox.setModel(new DefaultComboBoxModel(new String[] {}));
 		cursoBox.setBounds(10, 245, 299, 20);
 		contentPane.add(cursoBox);
 
 		ArrayList<CursoGraduacao> cursos = DadosCursoGraduacao.retornaLista();
         for(int i=0; i<cursos.size();i++) {
         	CursoGraduacao cursoGraduacao = cursos.get(i);
-        	//cursoGraduacao.getNomeCurso();
-        	cursoBox.addItem(cursoGraduacao.getNomeCurso());
+        	cursoBox.addItem(cursoGraduacao);
+        	
         }
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
@@ -151,9 +151,8 @@ public class CadastroAlunoGraduacao extends JFrame {
 					ag.setSituacao("Desligado");
 				}
 				
-				if (cursoBox.getSelectedItem().equals("Sistemas")) {
-					JOptionPane.showMessageDialog(null, "Sistemas efetuado com sucesso!");
-				}
+				CursoGraduacao cursoEscolhido = (CursoGraduacao) cursoBox.getSelectedItem();
+				ag.setCursoGraduacao(cursoEscolhido);
 				
 				//ag.setCursoGraduacao(cg);
 				DadosAlunoGraduacao.adicionar(ag);

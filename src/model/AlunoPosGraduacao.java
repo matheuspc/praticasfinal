@@ -12,8 +12,16 @@ public class AlunoPosGraduacao extends Aluno implements Serializable {
 	AlunoPosGraduacao(CursoPosGraduacao cpg){
 		
 	}
-	public AlunoPosGraduacao(){
+	
+	public AlunoPosGraduacao() {
 		
+	}
+	
+	public CursoPosGraduacao getCursoPos() {
+		return cpg;
+	}
+	public void setCursoPos(CursoPosGraduacao cpg) {
+		this.cpg = cpg;
 	}
 
 	public String getGraduacao() {

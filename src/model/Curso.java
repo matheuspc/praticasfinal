@@ -5,6 +5,12 @@ import java.util.*;
 
 public abstract class Curso implements Serializable {
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.getNomeCurso();
+	}
+
 	private String codigoCurso;
 	private String nomeCurso;
 	private String duracaoCurso;

@@ -253,7 +253,7 @@ public class Principal extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\matheus.cardoso\\eclipse-workspace\\Versao Final poo1\\praticasfinal\\favicon-proesc.png"));
-		lblNewLabel.setBounds(212, 82, 687, 448);
+		lblNewLabel.setBounds(247, 80, 687, 448);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblGschoolGerenciador = new JLabel("GSchool - Gerenciador Escolar");
