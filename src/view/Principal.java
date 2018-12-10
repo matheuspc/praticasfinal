@@ -252,7 +252,7 @@ public class Principal extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\matheus.cardoso\\eclipse-workspace\\Versao Final poo1\\praticasfinal\\favicon-proesc.png"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Matheus\\Desktop\\Vers\u00E3o Final - Poo1\\praticasfinal\\src\\favicon-proesc.png"));
 		lblNewLabel.setBounds(247, 80, 687, 448);
 		contentPane.add(lblNewLabel);
 		
